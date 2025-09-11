@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сибилёвский язык | Сибилевец</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Сибилевец</h1>
+        <p class="subtitle">Язык будущего, созданный Тимофеем Сибилёвым</p>
+    </header>
 
+    <nav>
+        <a href="#about">О языке</a>
+        <a href="#alphabet">Алфавит</a>
+        <a href="#grammar">Грамматика</a>
+        <a href="#dictionary">Словарь</a>
+        <a href="#translator">Переводчик</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>Что такое Сибилевец?</h2>
+            <p>Сибилевец — это простой и логичный язык, созданный для лёгкого общения. Он основан на русском, но в нём нет сложных падежей, склонений и спряжений. Девиз языка: <em>"Пишем как слышим, думаем как говорим"</em>.</p>
+            <p><strong>Создатель:</strong> Тимофей Сибилёв (р. 14.02.2010)</p>
+        </section>
+
+        <section id="alphabet">
+            <h2>Алфавит и произношение</h2>
+            <p>Алфавит Сибилёвского языка основан на русском, но стал ещё проще! Мы убрали все буквы, которые вызывают путаницу.</p>
+            <div class="alphabet-container">
+                <div class="letter">А</div>
+                <div class="letter">Б</div>
+                <div class="letter">В</div>
+                <div class="letter">Г</div>
+                <div class="letter">Д</div>
+                <div class="letter">Е</div>
+                <div class="letter">Ж</div>
+                <div class="letter">З</div>
+                <div class="letter">И</div>
+                <div class="letter">Й</div>
+                <div class="letter">К</div>
+                <div class="letter">Л</div>
+                <div class="letter">М</div>
+                <div class="letter">Н</div>
+                <div class="letter">О</div>
+                <div class="letter">П</div>
+                <div class="letter">Р</div>
+                <div class="letter">С</div>
+                <div class="letter">Т</div>
+                <div class="letter">У</div>
+                <div class="letter">Ф</div>
+                <div class="letter">Х</div>
+                <div class="letter">Ц</div>
+                <div class="letter">Ч</div>
+                <div class="letter">Ш</div>
+                <div class="letter">Э</div>
+            </div>
+            <p>Буквы <strong>Ё, Ъ, Ы, Ь, Ю, Я</strong> были удалены. Их заменяют combinations других букв: ЙО, ЙУ, ЙА, ШЧ.</p>
+        </section>
+
+        <section id="grammar">
+            <h2>Грамматика за 5 минут</h2>
+            <div class="grammar-rule">
+                <h3>1. Никаких изменений</h3>
+                <p>Слова не меняются. Ни по падежам, ни по родам, ни по числам.</p>
+            </div>
+            <div class="grammar-rule">
+                <h3>2. Множественное число</h3>
+                <p>Выражается словом <strong>"все"</strong> после существительного.</p>
+                <p><em>книга -> книга все</em></p>
+            </div>
+            <div class="grammar-rule">
+                <h3>3. Время глагола</h3>
+                <p>Выражается частицами перед глаголом:</p>
+                <ul>
+                    <li><strong>было</strong> - прошедшее время (Я было идти)</li>
+                    <li><strong>(ничего)</strong> - настоящее время (Я идти)</li>
+                    <li><strong>буду</strong> - будущее время (Я буду идти)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="dictionary">
+            <h2>Словарь</h2>
+            <p>Здесь собраны основные слова Сибилёвского языка.</p>
+            <input type="text" id="wordSearch" placeholder="Найти слово..." onkeyup="searchWords()">
+            <table id="dictionaryTable">
+                <tr>
+                    <th>Сибилевец</th>
+                    <th>Русский</th>
+                </tr>
+                <tr>
+                    <td>Здрава</td>
+                    <td>Привет</td>
+                </tr>
+                <tr>
+                    <td>Меня звать</td>
+                    <td>Меня зовут</td>
+                </tr>
+                <tr>
+                    <td>Говорить</td>
+                    <td>Говорить</td>
+                </tr>
+                <tr>
+                    <td>Язык</td>
+                    <td>Язык</td>
+                </tr>
+                <tr>
+                    <td>Друг</td>
+                    <td>Друг</td>
+                </tr>
+                <tr>
+                    <td>Книга</td>
+                    <td>Книга</td>
+                </tr>
+                <tr>
+                    <td>Хороший</td>
+                    <td>Хороший</td>
+                </tr>
+                <tr>
+                    <td>Плохой</td>
+                    <td>Плохой</td>
+                </tr>
+                <tr>
+                    <td>Дом</td>
+                    <td>Дом</td>
+                </tr>
+                <tr>
+                    <td>Солнце</td>
+                    <td>Солнце</td>
+                </tr>
+                <!-- Добавь сюда больше слов! -->
+            </table>
+        </section>
+
+        <section id="translator">
+            <h2>Мини-переводчик</h2>
+            <p>Введи русское предложение, чтобы увидеть, как оно могло бы выглядеть на Сибилёвском. Это базовая версия.</p>
+            <input type="text" id="russianInput" placeholder="Введите фразу на русском..." onkeyup="translateThis()">
+            <p>Результат: <span id="translationResult"><em>здесь появится перевод</em></span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Проект Тимофея Сибилёва. Сибилевец — язык простых возможностей.</p>
+        <p>Сайт размещён на <a href="https://github.com/" target="_blank">GitHub Pages</a>.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
