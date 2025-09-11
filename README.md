@@ -37,11 +37,11 @@
 
 1.  Склонируй репозиторий:
     ```bash
-    git clone https://github.com/timoshamoscow/sibylevec-language.git
+    git clone https://github.com/timoshamoscow/sibylevec-site.github.io
     ```
 2.  Перейди в папку проекта:
     ```bash
-    cd sibylevec-language
+    cd sibylevec-site
     ```
 3.  Открой файл `index.html` в браузере:
     *   Либо двойной клик по файлу
