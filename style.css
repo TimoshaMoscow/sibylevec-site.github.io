@@ -146,3 +146,18 @@ footer {
 footer a {
     color: #4ca1af;
 }
+
+.social-button {
+    display: inline-block;
+    background-color: #4ca1af; /* Бирюзовый акцентный цвет */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.social-button:hover {
+    background-color: #2c3e50; /* Тёмно-синий при наведении */
+}
