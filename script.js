@@ -1,56 +1,41 @@
-// Функция для поиска в словаре
-function searchWords() {
-    let input = document.getElementById("wordSearch");
-    let filter = input.value.toUpperCase();
-    let table = document.getElementById("dictionaryTable");
-    let tr = table.getElementsByTagName("tr");
-
-    for (let i = 1; i < tr.length; i++) { // Начинаем с 1, пропускаем заголовок
-        let tdSib = tr[i].getElementsByTagName("td")[0];
-        let tdRus = tr[i].getElementsByTagName("td")[1];
-        if (tdSib || tdRus) {
-            let txtValueSib = tdSib.textContent || tdSib.innerText;
-            let txtValueRus = tdRus.textContent || tdRus.innerText;
-            if (txtValueSib.toUpperCase().indexOf(filter) > -1 || txtValueRus.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
+// Помощник по языку Сибилевец
+function handleQuestion() {
+    let question = document.getElementById("questionInput").value.toLowerCase();
+    let answer = getAnswer(question);
+    document.getElementById("helperResult").innerText = answer;
 }
 
-// Простой переводчик (базовые правила)
-function translateThis() {
-    let inputText = document.getElementById("russianInput").value;
-    if (inputText === "") {
-        document.getElementById("translationResult").innerHTML = "<em>здесь появится перевод</em>";
-        return;
+function getAnswer(question) {
+    // Триггерные слова и ответы
+    if (question.includes("привет") || question.includes("здрава")) {
+        return "На Сибилёвском приветствие будет: 'Здрава'";
     }
-
-    // Простейший алгоритм замены по ключевым словам
-    let translation = inputText;
-
-    // 1. Замена окончаний на неизменяемую форму (очень упрощённо)
-    translation = translation.replace(/ить\b/gi, 'ить'); // делать -> делать
-    translation = translation.replace(/ать\b/gi, 'ать'); // читать -> читать
-    translation = translation.replace(/ю\b/gi, 'йу'); // юлу -> йула (очень примерное)
-    translation = translation.replace(/я\b/gi, 'йа'); //
-
-    // 2. Можно добавить замену отдельных слов из словаря
-    let wordMap = {
-        "привет": "здрава",
-        "меня зовут": "меня звать",
-        "друзья": "друг все",
-        "книги": "книга все",
-        // Добавь сюда свои слова из словаря!
-    };
-
-    for (let [russian, sibilevec] of Object.entries(wordMap)) {
-        let regex = new RegExp(russian, "gi");
-        translation = translation.replace(regex, sibilevec);
+    if (question.includes("падеж") || question.includes("склонен")) {
+        return "В Сибилёвском нет падежей! Слова не меняются. Используйте предлоги: 'к', 'от', 'с', 'о'.";
     }
-
-    // Показываем результат
-    document.getElementById("translationResult").innerText = translation;
+    if (question.includes("множественное") || question.includes("число")) {
+        return "Множественное число образуется добавлением слова 'все' после существительного. Пример: 'книга все' = книги";
+    }
+    if (question.includes("время") || question.includes("глагол")) {
+        return "Времена глагола: 'было' (прошедшее), ничего (настоящее), 'буду' (будущее). Пример: 'Я было идти', 'Я идти', 'Я буду идти'";
+    }
+    if (question.includes("алфавит") || question.includes("букв")) {
+        return "Алфавит состоит из 26 букв. Убраны Ё, Ъ, Ы, Ь, Ю, Я. Буква Ы заменена на И, твёрдый и мягкий знаки убраны.";
+    }
+    if (question.includes("создатель") || question.includes("тимофей")) {
+        return "Язык создан Тимофеем Сибилёвым (род. 14.02.2010)";
+    }
+    if (question.includes("пример") || question.includes("перевод")) {
+        return "Пример перевода: 'Я даю книгу другу' → 'Я давать книга к друг'";
+    }
+    if (question.includes("правило") || question.includes("основн")) {
+        return "3 главных правила: 1) Слова не меняются 2) Множественное число = 'все' 3) Время = 'было'/ничего/'буду'";
+    }
+    
+    // Общий ответ если не найдено триггерных слов
+    if (question.length > 3) {
+        return "Задайте вопрос о грамматике, алфавите или правилах языка Сибилевец. Например: 'Как образуется множественное число?'";
+    }
+    
+    return "здесь появится ответ";
 }
