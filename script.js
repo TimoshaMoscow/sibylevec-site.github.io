@@ -11,7 +11,7 @@ function getAnswer(question) {
         return "На Сибилёвском приветствие будет: 'Здрава'";
     }
     if (question.includes("сос") || question.includes("ху") || 
-        question.includes("бля") || question.includes("пизд") {
+        question.includes("бля") || question.includes("пизд")) {
         return "Пожалуйста, задайте вежливый вопрос о языке Сибилевец.";
     }
     if (question.includes("падеж") || question.includes("склонен")) {
