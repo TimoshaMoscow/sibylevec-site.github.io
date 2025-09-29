@@ -10,6 +10,11 @@ function getAnswer(question) {
     if (question.includes("привет") || question.includes("здрава")) {
         return "На Сибилёвском приветствие будет: 'Здрава'";
     }
+    if (question.includes("сос") || question.includes("ху") || 
+        question.includes("бля") || question.includes("пизд") ||
+        question.length < 3) {
+        return "Пожалуйста, задайте вежливый вопрос о языке Сибилевец.";
+    }
     if (question.includes("падеж") || question.includes("склонен")) {
         return "В Сибилёвском нет падежей! Слова не меняются. Используйте предлоги: 'к', 'от', 'с', 'о'.";
     }
