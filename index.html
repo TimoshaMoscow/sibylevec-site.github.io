@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Сибилевец - простой язык на основе русского">
-    <meta property="og:description" content="Изучите Сибилевец - язык без падежей и спряжений. Алфавит, грамматика, словарь и переводчик">
+    <meta property="og:description" content="Изучите Сибилевец - язык без падежей и спряжений. Алфавит, грамматика и правила">
     <meta property="og:url" content="https://timoshamoscow.github.io/sibylevec-site.github.io/">
     <meta name="yandex-verification" content="282e0047a40939f7" />
     <title>Сибилевец | Лингвистика</title>
@@ -23,8 +23,7 @@
         <a href="#about">О языке</a>
         <a href="#alphabet">Алфавит</a>
         <a href="#grammar">Грамматика</a>
-        <a href="#dictionary">Словарь</a>
-        <a href="#translator">Переводчик</a>
+        <a href="#helper">Помощник</a>
         <a href="#website">Соцсети</a>
     </nav>
 
@@ -67,6 +66,7 @@
                 <div class="letter">Э</div>
             </div>
             <p>Буквы <strong>Ё, Ъ, Ы, Ь, Ю, Я</strong> были удалены. Их заменяют комбинации других букв: ЙО, ЙУ, ЙА, ШЧ.</p>
+            <p><strong>Важно:</strong> Буква <strong>Ы</strong> заменена на <strong>И</strong>, а <strong>Ъ</strong> и <strong>Ь</strong> знаки просто убраны из алфавита.</p>
         </section>
 
         <section id="grammar">
@@ -91,64 +91,11 @@
             </div>
         </section>
 
-        <section id="dictionary">
-            <h2>Словарь</h2>
-            <p>Здесь собраны основные слова Сибилёвского языка.</p>
-            <input type="text" id="wordSearch" placeholder="Найти слово..." onkeyup="searchWords()">
-            <table id="dictionaryTable">
-                <tr>
-                    <th>Сибилевец</th>
-                    <th>Русский</th>
-                </tr>
-                <tr>
-                    <td>Здрава</td>
-                    <td>Привет</td>
-                </tr>
-                <tr>
-                    <td>Меня звать</td>
-                    <td>Меня зовут</td>
-                </tr>
-                <tr>
-                    <td>Говорить</td>
-                    <td>Говорить</td>
-                </tr>
-                <tr>
-                    <td>Язык</td>
-                    <td>Язык</td>
-                </tr>
-                <tr>
-                    <td>Друг</td>
-                    <td>Друг</td>
-                </tr>
-                <tr>
-                    <td>Книга</td>
-                    <td>Книга</td>
-                </tr>
-                <tr>
-                    <td>Хороший</td>
-                    <td>Хороший</td>
-                </tr>
-                <tr>
-                    <td>Плохой</td>
-                    <td>Плохой</td>
-                </tr>
-                <tr>
-                    <td>Дом</td>
-                    <td>Дом</td>
-                </tr>
-                <tr>
-                    <td>Солнце</td>
-                    <td>Солнце</td>
-                </tr>
-                <!-- Добавь сюда больше слов! -->
-            </table>
-        </section>
-
-        <section id="translator">
-            <h2>Мини-переводчик</h2>
-            <p>Введи русское предложение, чтобы увидеть, как оно могло бы выглядеть на Сибилевском. Это базовая версия.</p>
-            <input type="text" id="russianInput" placeholder="Введите фразу на русском..." onkeyup="translateThis()">
-            <p>Результат: <span id="translationResult"><em>здесь появится перевод</em></span></p>
+        <section id="helper">
+            <h2>Помощник по языку</h2>
+            <p>Задайте вопрос о языке Сибилевец, и я постараюсь помочь!</p>
+            <input type="text" id="questionInput" placeholder="Задайте вопрос о языке..." onkeyup="handleQuestion()">
+            <p>Ответ: <span id="helperResult"><em>здесь появится ответ</em></span></p>
         </section>
 
         <section id="website">
