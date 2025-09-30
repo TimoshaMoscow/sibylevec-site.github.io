@@ -17,11 +17,8 @@ header {
 header h1 {
     margin: 0;
     font-size: 3rem;
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 800;
+    color: white; /* Восстановлен белый цвет */
+    font-weight: bold; /* Восстановлена обычная жирность */
 }
 
 .subtitle {
