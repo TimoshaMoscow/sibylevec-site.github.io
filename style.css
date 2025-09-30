@@ -1,10 +1,10 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    color: #333;
+    color: #2d3748;
 }
 
 header {
@@ -17,6 +17,11 @@ header {
 header h1 {
     margin: 0;
     font-size: 3rem;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
 }
 
 .subtitle {
@@ -35,14 +40,17 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1.5rem;
-    margin: 0 0.2rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    padding: 0.8rem 1.8rem;
+    margin: 0 0.3rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
 nav a:hover {
-    background-color: #4ca1af;
+    background: linear-gradient(135deg, #4ca1af, #2c3e50);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 161, 175, 0.3);
 }
 
 main {
@@ -61,192 +69,6 @@ section {
 
 h2 {
     color: #2c3e50;
-    border-bottom: 2px solid #4ca1af;
-    padding-bottom: 0.5rem;
-}
-
-.alphabet-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin: 1rem 0;
-}
-
-.letter {
-    background: #34495e;
-    color: white;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.grammar-rule {
-    margin-bottom: 1.5rem;
-}
-
-/* Стили для упражнений */
-.exercise {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 1.5rem 0;
-    border-left: 4px solid #4ca1af;
-}
-
-.exercise h3 {
-    color: #2c3e50;
-    margin-top: 0;
-}
-
-.exercise input, .exercise select {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin: 0 0.5rem;
-    font-family: inherit;
-}
-
-.wide-input {
-    width: 300px;
-}
-
-.exercise button {
-    background: #4ca1af;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-.exercise button:hover {
-    background: #2c3e50;
-}
-
-.result {
-    font-weight: bold;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 4px;
-}
-
-/* Стили для помощника */
-#questionInput {
-    width: 100%;
-    padding: 0.7rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-#helperResult {
-    font-weight: bold;
-    color: #2c3e50;
-    background-color: #f8f9fa;
-    padding: 0.5rem;
-    border-radius: 4px;
-    display: block;
-    margin-top: 0.5rem;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: #2c3e50;
-    color: white;
-    margin-top: 2rem;
-}
-
-footer a {
-    color: #4ca1af;
-}
-
-.social-button {
-    display: inline-block;
-    background-color: #4ca1af;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-/* Добавь в конец CSS для мобильной оптимизации */
-@media (max-width: 768px) {
-    .wide-input {
-        width: 100%;
-        margin: 10px 0;
-    }
-    
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    nav a {
-        margin: 2px 0;
-        width: 90%;
-        text-align: center;
-    }
-}
-
-/* Улучшение читаемости */
-.grammar-rule ul {
-    padding-left: 20px;
-}
-
-.grammar-rule li {
-    margin-bottom: 8px;
-}
-
-.achievement-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.achievement {
-    background: linear-gradient(135deg, #4ca1af, #2c3e50);
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-}
-.social-button:hover {
-    background-color: #2c3e50;
-}
-
-/* Добавь эти стили в конец style.css */
-
-/* Улучшенная типографика */
-body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    line-height: 1.7;
-    color: #2d3748;
-}
-
-/* Заголовки с градиентом */
-h1 {
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 800;
-}
-
-h2 {
-    color: #2c3e50;
     border-bottom: 3px solid #4ca1af;
     padding-bottom: 0.8rem;
     margin-bottom: 1.5rem;
@@ -261,14 +83,12 @@ h3 {
     font-size: 1.3rem;
 }
 
-/* Улучшенные параграфы */
 p {
     margin-bottom: 1.2rem;
     font-size: 1.1rem;
     text-align: justify;
 }
 
-/* Выделение важного текста */
 strong {
     color: #2c3e50;
     font-weight: 700;
@@ -280,7 +100,37 @@ em {
     font-weight: 500;
 }
 
-/* Улучшенные списки */
+.alphabet-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.letter {
+    background: linear-gradient(135deg, #34495e, #4ca1af);
+    color: white;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.letter:hover {
+    transform: scale(1.1);
+}
+
+.grammar-rule {
+    margin-bottom: 1.5rem;
+}
+
 .grammar-rule ul {
     padding-left: 1.8rem;
 }
@@ -299,7 +149,91 @@ em {
     left: -1rem;
 }
 
-/* Карточки достижений с анимацией */
+.exercise {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border-left: 6px solid #4ca1af;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.exercise h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.exercise input, .exercise select {
+    padding: 0.7rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    margin: 0 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.exercise input:focus, .exercise select:focus {
+    outline: none;
+    border-color: #4ca1af;
+    box-shadow: 0 0 0 3px rgba(76, 161, 175, 0.1);
+}
+
+.wide-input {
+    width: 300px;
+}
+
+.exercise button {
+    background: linear-gradient(135deg, #4ca1af, #2c3e50);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(76, 161, 175, 0.3);
+}
+
+.exercise button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(76, 161, 175, 0.4);
+}
+
+.result {
+    font-weight: 700;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+#questionInput {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+#helperResult {
+    font-weight: 600;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 1.2rem;
+    border-radius: 8px;
+    display: block;
+    margin-top: 1rem;
+    border-left: 4px solid #4ca1af;
+    font-size: 1.1rem;
+}
+
 .achievement-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -324,140 +258,6 @@ em {
     box-shadow: 0 8px 25px rgba(76, 161, 175, 0.4);
 }
 
-/* Улучшенные буквы алфавита */
-.letter {
-    background: linear-gradient(135deg, #34495e, #4ca1af);
-    color: white;
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    font-weight: 800;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-}
-
-.letter:hover {
-    transform: scale(1.1);
-}
-
-/* Улучшенные упражнения */
-.exercise {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    padding: 2rem;
-    border-radius: 12px;
-    margin: 2rem 0;
-    border-left: 6px solid #4ca1af;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-.exercise h3 {
-    color: #2c3e50;
-    margin-top: 0;
-    font-size: 1.4rem;
-}
-
-/* Улучшенные кнопки и инпуты */
-.exercise button {
-    background: linear-gradient(135deg, #4ca1af, #2c3e50);
-    color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(76, 161, 175, 0.3);
-}
-
-.exercise button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(76, 161, 175, 0.4);
-}
-
-.exercise input, .exercise select {
-    padding: 0.7rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 8px;
-    margin: 0 0.5rem;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.exercise input:focus, .exercise select:focus {
-    outline: none;
-    border-color: #4ca1af;
-    box-shadow: 0 0 0 3px rgba(76, 161, 175, 0.1);
-}
-
-/* Улучшенные результаты */
-.result {
-    font-weight: 700;
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    text-align: center;
-}
-
-/* Навигация */
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.8rem 1.8rem;
-    margin: 0 0.3rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-nav a:hover {
-    background: linear-gradient(135deg, #4ca1af, #2c3e50);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(76, 161, 175, 0.3);
-}
-
-/* Футер */
-footer {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: white;
-    text-align: center;
-    padding: 2.5rem;
-    margin-top: 3rem;
-    font-size: 1.1rem;
-}
-
-footer a {
-    color: #4ca1af;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Помощник */
-#helperResult {
-    font-weight: 600;
-    color: #2c3e50;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    padding: 1.2rem;
-    border-radius: 8px;
-    display: block;
-    margin-top: 1rem;
-    border-left: 4px solid #4ca1af;
-    font-size: 1.1rem;
-}
-
-/* Социальные кнопки */
 .social-button {
     display: inline-block;
     background: linear-gradient(135deg, #4ca1af, #2c3e50);
@@ -477,14 +277,48 @@ footer a:hover {
     color: white;
 }
 
-/* Адаптивность для мобильных */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+}
+
+footer a {
+    color: #4ca1af;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
-    h1 {
+    header h1 {
         font-size: 2.5rem;
     }
     
     h2 {
         font-size: 1.6rem;
+    }
+    
+    .wide-input {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        margin: 0.3rem 0;
+        width: 90%;
+        text-align: center;
     }
     
     .achievement-grid {
@@ -493,12 +327,5 @@ footer a:hover {
     
     .exercise {
         padding: 1.5rem;
-    }
-    
-    nav a {
-        display: block;
-        width: 100%;
-        margin: 0.3rem 0;
-        text-align: center;
     }
 }
