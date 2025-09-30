@@ -8,49 +8,56 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f8fafc;
+    color: #23415b;
 }
 
-/* ХЕДЕР */
+/* ХЕДЕР с цветами лого */
 header {
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    color: white;
+    background: #3ea9bf;
+    color: #23415b;
     text-align: center;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
+    border-bottom: 4px solid #23415b;
 }
 
 header h1 {
     margin: 0;
     font-size: 3rem;
+    font-weight: 800;
 }
 
 .subtitle {
     font-style: italic;
-    margin-top: 0;
+    margin-top: 0.5rem;
     text-align: center;
+    color: #23415b;
+    opacity: 0.9;
 }
 
 /* НАВИГАЦИЯ */
 nav {
     display: flex;
     justify-content: center;
-    background: #34495e;
+    background: #23415b;
     padding: 1rem 0;
     flex-wrap: wrap;
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     padding: 0.8rem 1.5rem;
     margin: 0 0.3rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
 nav a:hover {
-    background-color: #4ca1af;
+    background: #3ea9bf;
+    color: #23415b;
+    transform: translateY(-2px);
 }
 
 /* ОСНОВНОЙ КОНТЕНТ */
@@ -61,62 +68,82 @@ main {
 }
 
 section {
-    background: white;
-    padding: 2rem;
+    background: #ffffff;
+    padding: 2.5rem;
     margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(35, 65, 91, 0.1);
+    border: 1px solid #eaeaea;
 }
 
 h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #4ca1af;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+    color: #23415b;
+    border-bottom: 3px solid #3ea9bf;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
 /* ДОСТИЖЕНИЯ */
 .achievement-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    gap: 20px;
     margin-top: 20px;
 }
 
 .achievement {
-    background: linear-gradient(135deg, #4ca1af, #2c3e50);
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #3ea9bf, #23415b);
+    color: #ffffff;
+    padding: 25px 20px;
+    border-radius: 10px;
     text-align: center;
     font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(62, 169, 191, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.achievement:hover {
+    transform: translateY(-5px);
 }
 
 /* АЛФАВИТ */
 .alphabet-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
 }
 
 .letter {
-    background: #34495e;
-    color: white;
-    width: 50px;
-    height: 50px;
+    background: #23415b;
+    color: #ffffff;
+    width: 55px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(35, 65, 91, 0.2);
+}
+
+.letter:hover {
+    background: #3ea9bf;
+    transform: scale(1.1);
 }
 
 /* ГРАММАТИКА */
 .grammar-rule {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #3ea9bf;
 }
 
 .grammar-rule ul {
@@ -124,109 +151,141 @@ h2 {
 }
 
 .grammar-rule li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    color: #23415b;
 }
 
 /* УПРАЖНЕНИЯ */
 .exercise {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 1.5rem 0;
-    border-left: 4px solid #4ca1af;
+    background: linear-gradient(135deg, #f8fafc, #ffffff);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    border-left: 5px solid #3ea9bf;
+    box-shadow: 0 2px 15px rgba(35, 65, 91, 0.1);
 }
 
 .exercise h3 {
-    color: #2c3e50;
+    color: #23415b;
     margin-top: 0;
+    font-size: 1.3rem;
 }
 
 .exercise input, .exercise select {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 0.7rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
     margin: 0 0.5rem;
     font-family: inherit;
+    color: #23415b;
+    transition: border-color 0.3s ease;
+}
+
+.exercise input:focus, .exercise select:focus {
+    outline: none;
+    border-color: #3ea9bf;
+    box-shadow: 0 0 0 3px rgba(62, 169, 191, 0.1);
 }
 
 .wide-input {
-    width: 300px;
+    width: 320px;
 }
 
 .exercise button {
-    background: #4ca1af;
-    color: white;
+    background: #3ea9bf;
+    color: #23415b;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
     cursor: pointer;
     font-family: inherit;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .exercise button:hover {
-    background: #2c3e50;
+    background: #23415b;
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 .result {
     font-weight: bold;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 4px;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
 }
 
 /* ПОМОЩНИК */
 #questionInput {
     width: 100%;
-    padding: 0.7rem;
+    padding: 0.8rem;
     margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
     box-sizing: border-box;
+    color: #23415b;
+}
+
+#questionInput:focus {
+    outline: none;
+    border-color: #3ea9bf;
 }
 
 #helperResult {
-    font-weight: bold;
-    color: #2c3e50;
-    background-color: #f8f9fa;
-    padding: 0.5rem;
-    border-radius: 4px;
+    font-weight: 600;
+    color: #23415b;
+    background: #f8fafc;
+    padding: 1.2rem;
+    border-radius: 8px;
     display: block;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    border-left: 4px solid #3ea9bf;
 }
 
 /* СОЦСЕТИ */
 .social-button {
     display: inline-block;
-    background-color: #4ca1af;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+    background: #3ea9bf;
+    color: #23415b;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
     text-decoration: none;
-    font-weight: bold;
-    margin-top: 5px;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
 }
 
 .social-button:hover {
-    background-color: #2c3e50;
+    background: #23415b;
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 /* ФУТЕР */
 footer {
     text-align: center;
-    padding: 2rem;
-    background: #2c3e50;
-    color: white;
-    margin-top: 2rem;
+    padding: 2.5rem;
+    background: #23415b;
+    color: #ffffff;
+    margin-top: 3rem;
 }
 
 footer a {
-    color: #4ca1af;
+    color: #3ea9bf;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* АДАПТИВНОСТЬ */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     nav {
@@ -235,7 +294,7 @@ footer a {
     }
     
     nav a {
-        margin: 2px 0;
+        margin: 0.3rem 0;
         width: 90%;
         text-align: center;
     }
@@ -250,7 +309,11 @@ footer a {
     }
     
     .exercise {
-        padding: 1rem;
+        padding: 1.5rem;
+    }
+    
+    section {
+        padding: 1.5rem;
     }
 }
 
@@ -261,30 +324,4 @@ html {
 
 section {
     scroll-margin-top: 20px;
-}
-
-/* ФИКС ДЛЯ ФУТЕРА */
-footer {
-    text-align: center !important;
-    padding: 2rem !important;
-    background: #2c3e50 !important;
-    color: white !important;
-    margin: 2rem auto 0 auto !important;
-    width: 100% !important;
-    display: block !important;
-    position: relative !important;
-    left: 0 !important;
-}
-
-footer p {
-    text-align: center !important;
-    margin: 0 auto 1rem auto !important;
-    max-width: none !important;
-}
-
-/* Nuclear option - переопределим ВСЕ возможные стили */
-body footer {
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
 }
