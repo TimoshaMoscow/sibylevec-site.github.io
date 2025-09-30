@@ -331,6 +331,11 @@ footer a:hover {
     .exercise {
         padding: 1.5rem;
     }
+
+    footer {
+        padding: 2rem 1rem;     /* Уменьши отступы на мобильных */
+        text-align: center;
+    }
 }
 
 /* Добавь эти стили в конец CSS */
