@@ -1,18 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Сразу скроллим наверх
+    window.scrollTo(0, 0);
+    
+    // И на всякий случай после загрузки всех ресурсов
+    window.addEventListener('load', function() {
+        window.scrollTo(0, 0);
+    });
+    
+    // Автофокус на первом поле ввода
     const firstInput = document.querySelector('input');
     if (firstInput) firstInput.focus();
 });
-
-if (window.location.hash) {
-    setTimeout(() => {
-        const target = document.querySelector(window.location.hash);
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
-    }, 100);
-} else {
-    window.scrollTo(0, 0);
-}
 
 // Помощник по языку Сибилевец
 function handleQuestion() {
