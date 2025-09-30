@@ -13,6 +13,10 @@ function handleQuestion() {
 
 function getAnswer(question) {
     // Фильтр некорректных вопросов
+    if (!question || question.length < 2) {
+        return "Задайте вопрос о языке Сибилевец...";
+    }
+    
     if (question.includes("сос") || question.includes("ху") || 
         question.includes("бля") || question.includes("пизд")) {
         return "Пожалуйста, задайте вежливый вопрос о языке Сибилевец.";
