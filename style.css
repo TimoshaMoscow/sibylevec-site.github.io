@@ -180,6 +180,34 @@ footer a {
     margin-top: 5px;
 }
 
+/* Добавь в конец CSS для мобильной оптимизации */
+@media (max-width: 768px) {
+    .wide-input {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        margin: 2px 0;
+        width: 90%;
+        text-align: center;
+    }
+}
+
+/* Улучшение читаемости */
+.grammar-rule ul {
+    padding-left: 20px;
+}
+
+.grammar-rule li {
+    margin-bottom: 8px;
+}
+
 .social-button:hover {
     background-color: #2c3e50;
 }
