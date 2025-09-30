@@ -4,6 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (firstInput) firstInput.focus();
 });
 
+// В начало script.js, после DOMContentLoaded
+if (window.location.hash) {
+    // Если есть якорь в URL, плавно прокручиваем к нему
+    setTimeout(() => {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, 100);
+} else {
+    // Если нет якоря, прокручиваем наверх
+    window.scrollTo(0, 0);
+}
+
 // Помощник по языку Сибилевец
 function handleQuestion() {
     let question = document.getElementById("questionInput").value.toLowerCase();
