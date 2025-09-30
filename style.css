@@ -325,3 +325,72 @@ html {
 section {
     scroll-margin-top: 20px;
 }
+
+/* СТИЛИ ДЛЯ ЛОГОТИПА В ХЕДЕРЕ */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.header-text {
+    text-align: left;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #23415b;
+}
+
+.header-text .subtitle {
+    margin: 0.5rem 0 0 0;
+    text-align: left;
+}
+
+/* АДАПТИВНОСТЬ ДЛЯ ЛОГОТИПА */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .header-text {
+        text-align: center;
+    }
+    
+    .header-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .header-text .subtitle {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .header-text h1 {
+        font-size: 1.8rem;
+    }
+}
