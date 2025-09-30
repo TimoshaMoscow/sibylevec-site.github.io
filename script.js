@@ -125,3 +125,35 @@ function checkExercise4() {
         result.style.color = "var(--error)";
     }
 }
+
+// Q&A аккордеон
+document.addEventListener('DOMContentLoaded', function() {
+    const qaItems = document.querySelectorAll('.qa-item');
+    
+    qaItems.forEach(item => {
+        const question = item.querySelector('.qa-question');
+        const answer = item.querySelector('.qa-answer');
+        const toggle = item.querySelector('.qa-toggle');
+        
+        question.addEventListener('click', function() {
+            const isActive = answer.classList.contains('active');
+            
+            // Закрываем все открытые ответы
+            document.querySelectorAll('.qa-answer.active').forEach(activeAnswer => {
+                if (activeAnswer !== answer) {
+                    activeAnswer.classList.remove('active');
+                    activeAnswer.parentElement.querySelector('.qa-toggle').textContent = '+';
+                }
+            });
+            
+            // Переключаем текущий ответ
+            if (isActive) {
+                answer.classList.remove('active');
+                toggle.textContent = '+';
+            } else {
+                answer.classList.add('active');
+                toggle.textContent = '−';
+            }
+        });
+    });
+});
