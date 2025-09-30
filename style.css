@@ -693,3 +693,89 @@ html {
 .mb-2 { margin-bottom: 2rem; }
 .mt-1 { margin-top: 1rem; }
 .mt-2 { margin-top: 2rem; }
+
+/* Стили для Q&A */
+.qa-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.qa-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.qa-item:hover {
+    border-color: var(--secondary);
+}
+
+.qa-question {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: var(--background);
+}
+
+.qa-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.qa-toggle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--secondary);
+    transition: transform 0.3s ease;
+}
+
+.qa-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.qa-answer.active {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    max-height: 500px;
+}
+
+.qa-answer p, .qa-answer ul, .qa-answer ol {
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.qa-answer ul, .qa-answer ol {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.qa-answer li {
+    margin-bottom: 0.3rem;
+}
+
+.qa-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.qa-footer a {
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.qa-footer a:hover {
+    text-decoration: underline;
+}
