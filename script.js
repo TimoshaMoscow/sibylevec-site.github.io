@@ -1,23 +1,26 @@
+// Инициализация
 document.addEventListener('DOMContentLoaded', function() {
-    // Сразу скроллим наверх ДО того как браузер успеет проскроллить
+    // Гарантированно скроллим наверх
     window.scrollTo(0, 0);
     
-    // Убираем фокус со всех элементов
-    if (document.activeElement) {
-        document.activeElement.blur();
+    // Инициализация помощника
+    const questionInput = document.getElementById('questionInput');
+    if (questionInput) {
+        questionInput.addEventListener('input', handleQuestion);
     }
-    
-    // Предотвращаем авто-фокус на инпутах упражнений
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 10);
 });
 
-// Помощник по языку Сибилевец
+// Помощник по языку
 function handleQuestion() {
-    let question = document.getElementById("questionInput").value.toLowerCase();
+    let question = document.getElementById('questionInput').value.toLowerCase();
     let answer = getAnswer(question);
-    document.getElementById("helperResult").innerHTML = answer;
+    
+    const helperResult = document.getElementById('helperResult');
+    if (question.length > 2) {
+        helperResult.innerHTML = `<div class="helper-answer">${answer}</div>`;
+    } else {
+        helperResult.innerHTML = '<div class="helper-placeholder">Здесь появится ответ на ваш вопрос...</div>';
+    }
 }
 
 function getAnswer(question) {
@@ -25,94 +28,100 @@ function getAnswer(question) {
         return "Задайте вопрос о языке Сибилевец...";
     }
     
-    if (question.includes("сос") || question.includes("ху") || 
-        question.includes("бля") || question.includes("пизд")) {
+    // Фильтр некорректных вопросов
+    const badWords = ["сос", "ху", "бля", "пизд", "еба"];
+    if (badWords.some(word => question.includes(word))) {
         return "Пожалуйста, задайте вежливый вопрос о языке Сибилевец.";
     }
 
+    // Ответы на вопросы
     if (question.includes("привет") || question.includes("здрава")) {
-        return "На Сибилевском приветствие будет: 'Здрава'";
+        return "На Сибилевском приветствие будет: <strong>'Здрава'</strong>";
     }
     if (question.includes("падеж") || question.includes("склонен")) {
-        return "В Сибилевском нет падежей! Слова не меняются. Используйте предлоги: 'к', 'от', 'с', 'о'.";
+        return "В Сибилевском <strong>нет падежей!</strong> Слова не меняются. Используйте предлоги: 'к', 'от', 'с', 'о'.";
     }
     if (question.includes("множественное") || question.includes("число")) {
-        return "Множественное число образуется добавлением слова 'все' после существительного. Пример: 'книга все' = книги";
+        return "Множественное число образуется добавлением слова <strong>'все'</strong> после существительного. Пример: 'книга все' = книги";
     }
     if (question.includes("время") || question.includes("глагол")) {
-        return "Времена глагола: 'было' (прошедшее), ничего (настоящее), 'буду' (будущее). Пример: 'Я было идти', 'Я идти', 'Я буду идти'";
+        return "Времена глагола: <strong>'было'</strong> (прошедшее), <strong>ничего</strong> (настоящее), <strong>'буду'</strong> (будущее). Пример: 'Я было идти', 'Я идти', 'Я буду идти'";
     }
     if (question.includes("алфавит") || question.includes("букв")) {
-        return "Алфавит состоит из 26 букв. Убраны Ё, Ъ, Ы, Ь, Ю, Я. Буква Ы заменена на И, твёрдый и мягкий знаки убраны.";
+        return "Алфавит состоит из <strong>26 букв</strong>. Убраны Ё, Ъ, Ы, Ь, Ю, Я. Буква Ы заменена на И, твёрдый и мягкий знаки убраны.";
     }
     if (question.includes("создатель") || question.includes("тимофей")) {
-        return "Язык создан Тимофеем Сибилевым (род. 14.02.2010)";
+        return "Язык создан <strong>Тимофеем Сибилевым</strong> (род. 14.02.2010)";
     }
     if (question.includes("пример") || question.includes("перевод")) {
-        return "Пример перевода: 'Я даю книгу другу' → 'Я давать книга к друг'";
+        return "Пример перевода: 'Я даю книгу другу' → <strong>'Я давать книга к друг'</strong>";
     }
     if (question.includes("правило") || question.includes("основн")) {
-        return "3 главных правила: 1) Слова не меняются 2) Множественное число = 'все' 3) Время = 'было'/ничего/'буду'";
+        return "3 главных правила: <strong>1) Слова не меняются 2) Множественное число = 'все' 3) Время = 'было'/ничего/'буду'</strong>";
     }
     
     if (question.length > 3) {
         return "Задайте вопрос о грамматике, алфавите или правилах языка Сибилевец. Например: 'Как образуется множественное число?'";
     }
     
-    return "здесь появится ответ";
+    return "Задайте вопрос о языке Сибилевец...";
 }
 
 // Функции для упражнений
 function checkExercise1() {
-    let answer = document.getElementById("ex1-answer").value.toLowerCase();
+    let answer = document.getElementById("ex1-answer").value.toLowerCase().trim();
     let correct = "я видеть красивый машина";
     
+    const result = document.getElementById("ex1-result");
     if (answer === correct) {
-        document.getElementById("ex1-result").innerHTML = "✅ Верно! Слова остаются в одной форме.";
-        document.getElementById("ex1-result").style.color = "green";
+        result.innerHTML = "✅ Верно! Слова остаются в одной форме.";
+        result.style.color = "var(--success)";
     } else {
-        document.getElementById("ex1-result").innerHTML = "❌ Попробуйте ещё: 'Я видеть красивый машина'";
-        document.getElementById("ex1-result").style.color = "red";
+        result.innerHTML = "❌ Попробуйте ещё: 'Я видеть красивый машина'";
+        result.style.color = "var(--error)";
     }
 }
 
 function checkExercise2() {
-    let answer = document.getElementById("ex2-answer").value.toLowerCase();
+    let answer = document.getElementById("ex2-answer").value.toLowerCase().trim();
     let correct = "интересный книга все";
     
+    const result = document.getElementById("ex2-result");
     if (answer === correct) {
-        document.getElementById("ex2-result").innerHTML = "✅ Отлично! Частица 'все' после слова.";
-        document.getElementById("ex2-result").style.color = "green";
+        result.innerHTML = "✅ Отлично! Частица 'все' после слова.";
+        result.style.color = "var(--success)";
     } else {
-        document.getElementById("ex2-result").innerHTML = "❌ Нужно добавить 'все': 'интересный книга все'";
-        document.getElementById("ex2-result").style.color = "red";
+        result.innerHTML = "❌ Нужно добавить 'все': 'интересный книга все'";
+        result.style.color = "var(--error)";
     }
 }
 
 function checkExercise3() {
     let answer = document.getElementById("ex3-answer").value;
     
+    const result = document.getElementById("ex3-result");
     if (answer === "было гулять") {
-        document.getElementById("ex3-result").innerHTML = "✅ Правильно! 'Было' для прошедшего времени.";
-        document.getElementById("ex3-result").style.color = "green";
+        result.innerHTML = "✅ Правильно! 'Было' для прошедшего времени.";
+        result.style.color = "var(--success)";
     } else if (answer === "") {
-        document.getElementById("ex3-result").innerHTML = "⚠️ Выберите вариант";
-        document.getElementById("ex3-result").style.color = "orange";
+        result.innerHTML = "⚠️ Выберите вариант";
+        result.style.color = "var(--warning)";
     } else {
-        document.getElementById("ex3-result").innerHTML = "❌ Вчера = прошедшее время → 'было гулять'";
-        document.getElementById("ex3-result").style.color = "red";
+        result.innerHTML = "❌ Вчера = прошедшее время → 'было гулять'";
+        result.style.color = "var(--error)";
     }
 }
 
 function checkExercise4() {
-    let answer = document.getElementById("ex4-answer").value.toLowerCase();
+    let answer = document.getElementById("ex4-answer").value.toLowerCase().trim();
     let correct = "мы буду читать интересный книга все";
     
+    const result = document.getElementById("ex4-result");
     if (answer === correct) {
-        document.getElementById("ex4-result").innerHTML = "🎉 Браво! Вы освоили все правила Сибилевца!";
-        document.getElementById("ex4-result").style.color = "green";
+        result.innerHTML = "🎉 Браво! Вы освоили все правила Сибилевца!";
+        result.style.color = "var(--success)";
     } else {
-        document.getElementById("ex4-result").innerHTML = "📝 Разбор: 'Мы буду читать интересный книга все'";
-        document.getElementById("ex4-result").style.color = "red";
+        result.innerHTML = "📝 Разбор: 'Мы буду читать интересный книга все'";
+        result.style.color = "var(--error)";
     }
 }
