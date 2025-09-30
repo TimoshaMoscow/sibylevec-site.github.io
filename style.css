@@ -326,3 +326,35 @@ footer a:hover {
         padding: 1.5rem;
     }
 }
+
+/* Добавь эти стили в конец CSS */
+
+/* Фикс для центрирования подзаголовка */
+.subtitle {
+    font-style: italic;
+    margin-top: 0;
+    text-align: center; /* Добавь это */
+    width: 100%; /* Добавь это */
+}
+
+/* Фикс для футера */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Добавь это */
+    box-sizing: border-box; /* Добавь это */
+}
+
+/* Дополнительно: плавная прокрутка к якорям */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Чтобы при открытии на якоре не было срезанного контента */
+section {
+    scroll-margin-top: 20px;
+}
