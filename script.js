@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Автофокус на первом поле ввода
     const firstInput = document.querySelector('input');
     if (firstInput) firstInput.focus();
 });
 
-// В начало script.js, после DOMContentLoaded
 if (window.location.hash) {
-    // Если есть якорь в URL, плавно прокручиваем к нему
     setTimeout(() => {
         const target = document.querySelector(window.location.hash);
         if (target) {
@@ -14,7 +11,6 @@ if (window.location.hash) {
         }
     }, 100);
 } else {
-    // Если нет якоря, прокручиваем наверх
     window.scrollTo(0, 0);
 }
 
@@ -26,7 +22,6 @@ function handleQuestion() {
 }
 
 function getAnswer(question) {
-    // Фильтр некорректных вопросов
     if (!question || question.length < 2) {
         return "Задайте вопрос о языке Сибилевец...";
     }
@@ -36,7 +31,6 @@ function getAnswer(question) {
         return "Пожалуйста, задайте вежливый вопрос о языке Сибилевец.";
     }
 
-    // Триггерные слова и ответы
     if (question.includes("привет") || question.includes("здрава")) {
         return "На Сибилевском приветствие будет: 'Здрава'";
     }
@@ -62,7 +56,6 @@ function getAnswer(question) {
         return "3 главных правила: 1) Слова не меняются 2) Множественное число = 'все' 3) Время = 'было'/ничего/'буду'";
     }
     
-    // Общий ответ если не найдено триггерных слов
     if (question.length > 3) {
         return "Задайте вопрос о грамматике, алфавите или правилах языка Сибилевец. Например: 'Как образуется множественное число?'";
     }
