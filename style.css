@@ -281,12 +281,9 @@ footer {
     color: white;
     margin-top: 3rem;
     font-size: 1.1rem;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;              /* Добавь эту строку */
-    flex-direction: column;     /* Добавь эту строку */
-    align-items: center;        /* Добавь эту строку */
-    justify-content: center;    /* Добавь эту строку */
+    position: relative;
+    left: 0;
+    right: 0;
 }
 
 footer a {
