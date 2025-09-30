@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Сразу скроллим наверх
+    // Сразу скроллим наверх ДО того как браузер успеет проскроллить
     window.scrollTo(0, 0);
     
-    // И на всякий случай после загрузки всех ресурсов
-    window.addEventListener('load', function() {
-        window.scrollTo(0, 0);
-    });
+    // Убираем фокус со всех элементов
+    if (document.activeElement) {
+        document.activeElement.blur();
+    }
     
-    // Автофокус на первом поле ввода
-    const firstInput = document.querySelector('input');
-    if (firstInput) firstInput.focus();
+    // Предотвращаем авто-фокус на инпутах упражнений
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 10);
 });
 
 // Помощник по языку Сибилевец
