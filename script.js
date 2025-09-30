@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Автофокус на первом поле ввода
+    const firstInput = document.querySelector('input');
+    if (firstInput) firstInput.focus();
+});
+
 // Помощник по языку Сибилевец
 function handleQuestion() {
     let question = document.getElementById("questionInput").value.toLowerCase();
