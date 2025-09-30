@@ -226,3 +226,279 @@ footer a {
 .social-button:hover {
     background-color: #2c3e50;
 }
+
+/* Добавь эти стили в конец style.css */
+
+/* Улучшенная типографика */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+    color: #2d3748;
+}
+
+/* Заголовки с градиентом */
+h1 {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 3px solid #4ca1af;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+h3 {
+    color: #34495e;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+/* Улучшенные параграфы */
+p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+/* Выделение важного текста */
+strong {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+em {
+    color: #4ca1af;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Улучшенные списки */
+.grammar-rule ul {
+    padding-left: 1.8rem;
+}
+
+.grammar-rule li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+.grammar-rule li:before {
+    content: "•";
+    color: #4ca1af;
+    font-weight: bold;
+    position: absolute;
+    left: -1rem;
+}
+
+/* Карточки достижений с анимацией */
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.achievement {
+    background: linear-gradient(135deg, #4ca1af, #2c3e50);
+    color: white;
+    padding: 1.8rem 1.2rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(76, 161, 175, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(76, 161, 175, 0.4);
+}
+
+/* Улучшенные буквы алфавита */
+.letter {
+    background: linear-gradient(135deg, #34495e, #4ca1af);
+    color: white;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.letter:hover {
+    transform: scale(1.1);
+}
+
+/* Улучшенные упражнения */
+.exercise {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border-left: 6px solid #4ca1af;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.exercise h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+/* Улучшенные кнопки и инпуты */
+.exercise button {
+    background: linear-gradient(135deg, #4ca1af, #2c3e50);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(76, 161, 175, 0.3);
+}
+
+.exercise button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(76, 161, 175, 0.4);
+}
+
+.exercise input, .exercise select {
+    padding: 0.7rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    margin: 0 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.exercise input:focus, .exercise select:focus {
+    outline: none;
+    border-color: #4ca1af;
+    box-shadow: 0 0 0 3px rgba(76, 161, 175, 0.1);
+}
+
+/* Улучшенные результаты */
+.result {
+    font-weight: 700;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Навигация */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    margin: 0 0.3rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    background: linear-gradient(135deg, #4ca1af, #2c3e50);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 161, 175, 0.3);
+}
+
+/* Футер */
+footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+}
+
+footer a {
+    color: #4ca1af;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Помощник */
+#helperResult {
+    font-weight: 600;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 1.2rem;
+    border-radius: 8px;
+    display: block;
+    margin-top: 1rem;
+    border-left: 4px solid #4ca1af;
+    font-size: 1.1rem;
+}
+
+/* Социальные кнопки */
+.social-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #4ca1af, #2c3e50);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(76, 161, 175, 0.3);
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(76, 161, 175, 0.4);
+    color: white;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .exercise {
+        padding: 1.5rem;
+    }
+    
+    nav a {
+        display: block;
+        width: 100%;
+        margin: 0.3rem 0;
+        text-align: center;
+    }
+}
