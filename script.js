@@ -57,7 +57,7 @@ function getAnswer(question) {
         return "Пример перевода: 'Я даю книгу другу' → <strong>'Я давать книга к друг'</strong>";
     }
     if (question.includes("правило") || question.includes("основн")) {
-        return "3 главных правила: <strong>1) Слова не меняются 2) Множественное число = 'все' 3) Время = 'было'/ничего/'буду'</strong>";
+        return "3 главных правила: <strong>1) Слова не меняются 2) Множественное число = 'все' 3) Время = 'било'/ничего/'буду'</strong>";
     }
     
     if (question.length > 3) {
@@ -70,7 +70,7 @@ function getAnswer(question) {
 // Функции для упражнений
 function checkExercise1() {
     let answer = document.getElementById("ex1-answer").value.toLowerCase().trim();
-    let correct = "я видеть красивый машина";
+    let correct = "я видеть красивий машина";
     
     const result = document.getElementById("ex1-result");
     if (answer === correct) {
@@ -80,14 +80,14 @@ function checkExercise1() {
         result.innerHTML = "⚠️ Введите ответ";
         result.style.color = "var(--warning)";
     } else {
-        result.innerHTML = "❌ Попробуйте ещё: 'Я видеть красивый машина'";
+        result.innerHTML = "❌ Попробуйте ещё: 'Я видеть красивий машина'";
         result.style.color = "var(--error)";
     }
 }
 
 function checkExercise2() {
     let answer = document.getElementById("ex2-answer").value.toLowerCase().trim();
-    let correct = "интересный книга все";
+    let correct = "интересний книга все";
     
     const result = document.getElementById("ex2-result");
     if (answer === correct) {
@@ -97,7 +97,7 @@ function checkExercise2() {
         result.innerHTML = "⚠️ Введите ответ";
         result.style.color = "var(--warning)";
     } else {
-        result.innerHTML = "❌ Нужно добавить 'все': 'интересный книга все'";
+        result.innerHTML = "❌ Нужно добавить 'все': 'интересний книга все'";
         result.style.color = "var(--error)";
     }
 }
@@ -107,20 +107,20 @@ function checkExercise3() {
     
     const result = document.getElementById("ex3-result");
     if (answer === "было гулять") {
-        result.innerHTML = "✅ Правильно! 'Было' для прошедшего времени.";
+        result.innerHTML = "✅ Правильно! 'Било' для прошедшего времени.";
         result.style.color = "var(--success)";
     } else if (answer === "") {
         result.innerHTML = "⚠️ Выберите вариант";
         result.style.color = "var(--warning)";
     } else {
-        result.innerHTML = "❌ Вчера = прошедшее время → 'было гулять'";
+        result.innerHTML = "❌ Вчера = прошедшее время → 'било гулять'";
         result.style.color = "var(--error)";
     }
 }
 
 function checkExercise4() {
     let answer = document.getElementById("ex4-answer").value.toLowerCase().trim();
-    let correct = "мы буду читать интересный книга все";
+    let correct = "мы буду читать интересний книга все";
     
     const result = document.getElementById("ex4-result");
     if (answer === correct) {
@@ -130,7 +130,7 @@ function checkExercise4() {
         result.innerHTML = "⚠️ Введите ответ";
         result.style.color = "var(--warning)";
     } else {
-        result.innerHTML = "❌ Ответ: Мы буду читать интересный книга все";
+        result.innerHTML = "❌ Ответ: Мы буду читать интересний книга все";
         result.style.color = "var(--error)";
     }
 }
