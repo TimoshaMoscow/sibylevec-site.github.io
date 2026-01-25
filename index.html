@@ -30,9 +30,7 @@
                 <div class="nav-links">
                     <a href="#about" class="nav-link">О языке</a>
                     <a href="#features" class="nav-link">Особенности</a>
-                    <a href="#grammar" class="nav-link">Грамматика</a>
-                    <a href="#practice" class="nav-link">Практика</a>
-                    <a href="#alphabet" class="nav-link">Алфавит</a>
+                    <a href="study.html" class="nav-link">Обучение</a>
                     <a href="#community" class="nav-link">Сообщество</a>
                     <a href="#helper" class="nav-link">Помощник</a>
                     <a href="#qa" class="nav-link">Q&A</a>
@@ -122,124 +120,6 @@
                         <li>Предлоги вместо падежей</li>
                     </ul>
                 </div>
-            </div>
-        </section>
-
-        <section id="grammar" class="section">
-            <div class="section-header">
-                <h2>Грамматика за 5 минут</h2>
-                <p class="section-subtitle">Всё гениальное - просто</p>
-            </div>
-            <div class="grammar-rules">
-                <div class="rule-card">
-                    <div class="rule-number">01</div>
-                    <h3>Слова не меняются</h3>
-                    <p>Ни по падежам, ни по родам, ни по числам. Каждое слово имеет одну постоянную форму.</p>
-                    <div class="example">
-                        <div class="example-label">Пример:</div>
-                        <div class="example-text">"Я даю книгу другу" → "Я давать книга к друг"</div>
-                    </div>
-                </div>
-                <div class="rule-card">
-                    <div class="rule-number">02</div>
-                    <h3>Множественное число</h3>
-                    <p>Образуется добавлением слова "все" после существительного.</p>
-                    <div class="example">
-                        <div class="example-label">Пример:</div>
-                        <div class="example-text">"книга" → "книга все"<br>"дом" → "дом все"</div>
-                    </div>
-                </div>
-                <div class="rule-card">
-                    <div class="rule-number">03</div>
-                    <h3>Времена глаголов</h3>
-                    <p>Выражаются частицами перед глаголом.</p>
-                    <div class="example">
-                        <div class="example-label">Пример:</div>
-                        <div class="example-text">
-                            "было" - прошедшее ("Я было идти")<br>
-                            "ничего" - настоящее ("Я идти")<br>
-                            "буду" - будущее ("Я буду идти")
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="practice" class="section">
-            <div class="section-header">
-                <h2>Практика</h2>
-                <p class="section-subtitle">Закрепите знания на практике</p>
-            </div>
-            <div class="practice-grid">
-                <div class="exercise-card">
-                    <h3>Упражнение 1: Базовый перевод</h3>
-                    <p>Переведите фразу, оставляя слова неизменными:</p>
-                    <div class="exercise-content">
-                        <div class="exercise-text">"Я вижу красивую машину" →</div>
-                        <input type="text" class="exercise-input" placeholder="Введите перевод..." id="ex1-answer">
-                        <button class="exercise-btn" onclick="checkExercise1()">Проверить</button>
-                        <div class="exercise-result" id="ex1-result"></div>
-                    </div>
-                </div>
-                
-                <div class="exercise-card">
-                    <h3>Упражнение 2: Множественное число</h3>
-                    <p>Образуйте множественное число:</p>
-                    <div class="exercise-content">
-                        <div class="exercise-text">"интересный книга" →</div>
-                        <input type="text" class="exercise-input" placeholder="Введите перевод..." id="ex2-answer">
-                        <button class="exercise-btn" onclick="checkExercise2()">Проверить</button>
-                        <div class="exercise-result" id="ex2-result"></div>
-                    </div>
-                </div>
-
-                <div class="exercise-card">
-                    <h3>Упражнение 3: Времена глагола</h3>
-                    <p>Выберите правильное время:</p>
-                    <div class="exercise-content">
-                        <div class="exercise-text">"Вчера я (гулять) в парке" →</div>
-                        <select class="exercise-select" id="ex3-answer">
-                            <option value="">Выберите время</option>
-                            <option value="было гулять">было гулять</option>
-                            <option value="гулять">гулять</option>
-                            <option value="буду гулять">буду гулять</option>
-                        </select>
-                        <button class="exercise-btn" onclick="checkExercise3()">Проверить</button>
-                        <div class="exercise-result" id="ex3-result"></div>
-                    </div>
-                </div>
-
-                <div class="exercise-card">
-                    <h3>Упражнение 4: Полный перевод</h3>
-                    <p>Переведите с учётом всех правил:</p>
-                    <div class="exercise-content">
-                        <div class="exercise-text">"Мы будем читать интересные книги" →</div>
-                        <input type="text" class="exercise-input wide" placeholder="Введите полный перевод..." id="ex4-answer">
-                        <button class="exercise-btn" onclick="checkExercise4()">Проверить</button>
-                        <div class="exercise-result" id="ex4-result"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="alphabet" class="alphabet-section section">
-            <div class="section-header">
-                <h2>Алфавит</h2>
-                <p class="section-subtitle">26 простых и понятных букв</p>
-            </div>
-            <div class="alphabet-container">
-                <div class="letter">А</div><div class="letter">Б</div><div class="letter">В</div><div class="letter">Г</div>
-                <div class="letter">Д</div><div class="letter">Е</div><div class="letter">Ж</div><div class="letter">З</div>
-                <div class="letter">И</div><div class="letter">Й</div><div class="letter">К</div><div class="letter">Л</div>
-                <div class="letter">М</div><div class="letter">Н</div><div class="letter">О</div><div class="letter">П</div>
-                <div class="letter">Р</div><div class="letter">С</div><div class="letter">Т</div><div class="letter">У</div>
-                <div class="letter">Ф</div><div class="letter">Х</div><div class="letter">Ц</div><div class="letter">Ч</div>
-                <div class="letter">Ш</div><div class="letter">Э</div>
-            </div>
-            <div class="alphabet-note">
-                <p><strong>Упрощения:</strong></p>
-                <p>• Знаки <strong>Ь Ъ</strong> удалены из алфавита</p>
-                <p>• Буквы <strong>Ё, Ю, Я, Щ, Ы</strong> заменены на <strong>ЙО, ЙУ, ЙА, ШЧ, И</strong></p>
             </div>
         </section>
 
