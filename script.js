@@ -45,7 +45,7 @@ function getAnswer(question) {
         return "Множественное число образуется добавлением слова <strong>'все'</strong> после существительного. Пример: 'книга все' = книги";
     }
     if (question.includes("время") || question.includes("глагол")) {
-        return "Времена глагола: <strong>'было'</strong> (прошедшее), <strong>ничего</strong> (настоящее), <strong>'буду'</strong> (будущее). Пример: 'Я было идти', 'Я идти', 'Я буду идти'";
+        return "Времена глагола: <strong>'било'</strong> (прошедшее), <strong>-</strong> (настоящее), <strong>'буду'</strong> (будущее). Пример: 'Я било идти', 'Я идти', 'Я буду идти'";
     }
     if (question.includes("алфавит") || question.includes("букв")) {
         return "Алфавит состоит из <strong>26 букв</strong>. Убраны Ё, Ъ, Ы, Ь, Ю, Я. Буква Ы заменена на И, твёрдый и мягкий знаки убраны.";
@@ -106,7 +106,7 @@ function checkExercise3() {
     let answer = document.getElementById("ex3-answer").value;
     
     const result = document.getElementById("ex3-result");
-    if (answer === "было гулять") {
+    if (answer === "било гулять") {
         result.innerHTML = "✅ Правильно! 'Било' для прошедшего времени.";
         result.style.color = "var(--success)";
     } else if (answer === "") {
