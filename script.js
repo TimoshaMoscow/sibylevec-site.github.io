@@ -29,17 +29,17 @@ function getAnswer(question) {
     }
     
     // Фильтр некорректных вопросов
-    const badWords = ["сос", "ху", "бля", "пизд", "еба"];
+    const badWords = ["сосат", "хуй", "бля", "пизд", "еба"];
     if (badWords.some(word => question.includes(word))) {
         return "Пожалуйста, задайте вежливый вопрос о языке Сибилевец.";
     }
 
     // Ответы на вопросы
     if (question.includes("привет") || question.includes("здрава")) {
-        return "На Сибилевском приветствие будет: <strong>'Здрава'</strong>";
+        return "На Сибилевце приветствие будет: <strong>'Здрава'</strong>";
     }
     if (question.includes("падеж") || question.includes("склонен")) {
-        return "В Сибилевском <strong>нет падежей!</strong> Слова не меняются. Используйте предлоги: 'к', 'от', 'с', 'о'.";
+        return "В Сибилевце <strong>нет падежей!</strong> Слова не меняются. Используйте предлоги: 'к', 'от', 'с', 'о'.";
     }
     if (question.includes("множественное") || question.includes("число")) {
         return "Множественное число образуется добавлением слова <strong>'все'</strong> после существительного. Пример: 'книга все' = книги";
@@ -76,6 +76,9 @@ function checkExercise1() {
     if (answer === correct) {
         result.innerHTML = "✅ Верно! Слова остаются в одной форме.";
         result.style.color = "var(--success)";
+    } else if (answer === "") {
+        result.innerHTML = "⚠️ Введите ответ";
+        result.style.color = "var(--warning)";
     } else {
         result.innerHTML = "❌ Попробуйте ещё: 'Я видеть красивый машина'";
         result.style.color = "var(--error)";
@@ -90,6 +93,9 @@ function checkExercise2() {
     if (answer === correct) {
         result.innerHTML = "✅ Отлично! Частица 'все' после слова.";
         result.style.color = "var(--success)";
+    } else if (answer === "") {
+        result.innerHTML = "⚠️ Введите ответ";
+        result.style.color = "var(--warning)";
     } else {
         result.innerHTML = "❌ Нужно добавить 'все': 'интересный книга все'";
         result.style.color = "var(--error)";
@@ -118,10 +124,13 @@ function checkExercise4() {
     
     const result = document.getElementById("ex4-result");
     if (answer === correct) {
-        result.innerHTML = "🎉 Браво! Вы освоили все правила Сибилевца!";
+        result.innerHTML = "✅ Правильно! Вы освоили все правила Сибилевца!";
         result.style.color = "var(--success)";
+    } else if (answer === "") {
+        result.innerHTML = "⚠️ Введите ответ";
+        result.style.color = "var(--warning)";
     } else {
-        result.innerHTML = "📝 Разбор: 'Мы буду читать интересный книга все'";
+        result.innerHTML = "❌ Ответ: Мы буду читать интересный книга все";
         result.style.color = "var(--error)";
     }
 }
