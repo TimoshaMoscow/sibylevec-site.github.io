@@ -106,7 +106,7 @@ function checkExercise3() {
     let answer = document.getElementById("ex3-answer").value;
     
     const result = document.getElementById("ex3-result");
-    if (answer === "било гулять") {
+    if (answer === "било гулйать") {
         result.innerHTML = "✅ Правильно! 'Било' для прошедшего времени.";
         result.style.color = "var(--success)";
     } else if (answer === "") {
@@ -120,7 +120,7 @@ function checkExercise3() {
 
 function checkExercise4() {
     let answer = document.getElementById("ex4-answer").value.toLowerCase().trim();
-    let correct = "мы буду читать интересний книга все";
+    let correct = "ми буду читать интересний книга все";
     
     const result = document.getElementById("ex4-result");
     if (answer === correct) {
