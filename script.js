@@ -70,7 +70,7 @@ function getAnswer(question) {
 // Функции для упражнений
 function checkExercise1() {
     let answer = document.getElementById("ex1-answer").value.toLowerCase().trim();
-    let correct = "я видеть красивий машина";
+    let correct = "я видет красивий машина";
     
     const result = document.getElementById("ex1-result");
     if (answer === correct) {
@@ -120,7 +120,7 @@ function checkExercise3() {
 
 function checkExercise4() {
     let answer = document.getElementById("ex4-answer").value.toLowerCase().trim();
-    let correct = "ми буду читать интересний книга все";
+    let correct = "ми буду читат интересний книга все";
     
     const result = document.getElementById("ex4-result");
     if (answer === correct) {
@@ -130,7 +130,7 @@ function checkExercise4() {
         result.innerHTML = "⚠️ Введите ответ";
         result.style.color = "var(--warning)";
     } else {
-        result.innerHTML = "❌ Ответ: Мы буду читать интересний книга все";
+        result.innerHTML = "❌ Ответ: Ми буду читат интересний книга все";
         result.style.color = "var(--error)";
     }
 }
