@@ -10,63 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Помощник по языку
-function handleQuestion() {
-    let question = document.getElementById('questionInput').value.toLowerCase();
-    let answer = getAnswer(question);
-    
-    const helperResult = document.getElementById('helperResult');
-    if (question.length > 2) {
-        helperResult.innerHTML = `<div class="helper-answer">${answer}</div>`;
-    } else {
-        helperResult.innerHTML = '<div class="helper-placeholder">Здесь появится ответ на ваш вопрос...</div>';
-    }
-}
-
-function getAnswer(question) {
-    if (!question || question.length < 2) {
-        return "Задайте вопрос о языке Сибилевец...";
-    }
-    
-    // Фильтр некорректных вопросов
-    const badWords = ["сосат", "хуй", "бля", "пизд", "еба"];
-    if (badWords.some(word => question.includes(word))) {
-        return "Пожалуйста, задайте вежливый вопрос о языке Сибилевец.";
-    }
-
-    // Ответы на вопросы
-    if (question.includes("привет") || question.includes("здрава")) {
-        return "На Сибилевце приветствие будет: <strong>'Здрава'</strong>";
-    }
-    if (question.includes("падеж") || question.includes("склонен")) {
-        return "В Сибилевце <strong>нет падежей!</strong> Слова не меняются. Используйте предлоги: 'к', 'от', 'с', 'о'.";
-    }
-    if (question.includes("множественное") || question.includes("число")) {
-        return "Множественное число образуется добавлением слова <strong>'все'</strong> после существительного. Пример: 'книга все' = книги";
-    }
-    if (question.includes("время") || question.includes("глагол")) {
-        return "Времена глагола: <strong>'било'</strong> (прошедшее), <strong>-</strong> (настоящее), <strong>'буду'</strong> (будущее). Пример: 'Я било идти', 'Я идти', 'Я буду идти'";
-    }
-    if (question.includes("алфавит") || question.includes("букв")) {
-        return "Алфавит состоит из <strong>26 букв</strong>. Убраны Ё, Ъ, Ы, Ь, Ю, Я. Буква Ы заменена на И, твёрдый и мягкий знаки убраны.";
-    }
-    if (question.includes("создатель") || question.includes("тимофей")) {
-        return "Язык создан <strong>Тимофеем Сибилевым</strong> (род. 14.02.2010)";
-    }
-    if (question.includes("пример") || question.includes("перевод")) {
-        return "Пример перевода: 'Я даю книгу другу' → <strong>'Я давать книга к друг'</strong>";
-    }
-    if (question.includes("правило") || question.includes("основн")) {
-        return "3 главных правила: <strong>1) Слова не меняются 2) Множественное число = 'все' 3) Время = 'било'/ничего/'буду'</strong>";
-    }
-    
-    if (question.length > 3) {
-        return "Задайте вопрос о грамматике, алфавите или правилах языка Сибилевец. Например: 'Как образуется множественное число?'";
-    }
-    
-    return "Задайте вопрос о языке Сибилевец...";
-}
-
 // Функции для упражнений
 function checkExercise1() {
     let answer = document.getElementById("ex1-answer").value.toLowerCase().trim();
