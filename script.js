@@ -8,7 +8,115 @@ document.addEventListener('DOMContentLoaded', function() {
     if (questionInput) {
         questionInput.addEventListener('input', handleQuestion);
     }
+    
+    // Инициализация Q&A аккордеона
+    const qaItems = document.querySelectorAll('.qa-item');
+    
+    qaItems.forEach(item => {
+        const question = item.querySelector('.qa-question');
+        const answer = item.querySelector('.qa-answer');
+        const toggle = item.querySelector('.qa-toggle');
+        
+        if (question && answer && toggle) {
+            question.addEventListener('click', function() {
+                const isActive = answer.classList.contains('active');
+                
+                // Закрываем все открытые ответы
+                document.querySelectorAll('.qa-answer.active').forEach(activeAnswer => {
+                    if (activeAnswer !== answer) {
+                        activeAnswer.classList.remove('active');
+                        const activeToggle = activeAnswer.parentElement.querySelector('.qa-toggle');
+                        if (activeToggle) activeToggle.textContent = '+';
+                    }
+                });
+                
+                // Переключаем текущий ответ
+                if (isActive) {
+                    answer.classList.remove('active');
+                    toggle.textContent = '+';
+                } else {
+                    answer.classList.add('active');
+                    toggle.textContent = '−';
+                }
+            });
+        }
+    });
+    
+    // Инициализация произношения букв
+    initAlphabetPronunciation();
 });
+
+// Функция для произношения букв
+function initAlphabetPronunciation() {
+    // Словарь произношений для букв Сибилевца (31 буква)
+    const pronunciations = {
+        'А': '[А]',
+        'Б': '[Бэ]',
+        'В': '[Вэ]',
+        'Г': '[Гэ]',
+        'Д': '[Дэ]',
+        'Е': '[Е]',
+        'Ё': '[Йо]',
+        'Ж': '[Жэ]',
+        'З': '[Зэ]',
+        'I': '[И]',
+        'И': '[Ы]',
+        'Й': '[]',
+        'К': '[Кэ]',
+        'Л': '[Эл]',
+        'М': '[Эм]',
+        'Н': '[Эн]',
+        'О': '[О]',
+        'П': '[Пэ]',
+        'Р': '[Рэ]',
+        'С': '[Сэ]',
+        'Т': '[Тэ]',
+        'У': '[У]',
+        'Ф': '[Фэ]',
+        'Х': '[Ха',
+        'Ц': '[Цэ]',
+        'Ч': '[Че]',
+        'Ш': '[Ша]',
+        'Ъ': '[]',
+        'Ь': '[]',
+        'Э': '[Э]',
+        'Я': '[Я]'
+    };
+    
+    // Находим все буквы в алфавите
+    const letters = document.querySelectorAll('.letter');
+    
+    if (letters.length === 0) return;
+    
+    // Создаём элемент для всплывающей подсказки
+    let toast = document.querySelector('.pronunciation-toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.className = 'pronunciation-toast';
+        document.body.appendChild(toast);
+    }
+    
+    let timeoutId;
+    
+    // Добавляем обработчик клика на каждую букву
+    letters.forEach(letter => {
+        letter.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const char = this.textContent.trim();
+            const message = pronunciations[char] || `Буква ${char}`;
+            
+            // Показываем подсказку
+            toast.textContent = message;
+            toast.style.opacity = '1';
+            
+            // Скрываем через 2 секунды
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                toast.style.opacity = '0';
+            }, 2000);
+        });
+    });
+}
 
 // Функции для упражнений
 function checkExercise1() {
@@ -78,34 +186,8 @@ function checkExercise4() {
     }
 }
 
-// Q&A аккордеон
-document.addEventListener('DOMContentLoaded', function() {
-    const qaItems = document.querySelectorAll('.qa-item');
-    
-    qaItems.forEach(item => {
-        const question = item.querySelector('.qa-question');
-        const answer = item.querySelector('.qa-answer');
-        const toggle = item.querySelector('.qa-toggle');
-        
-        question.addEventListener('click', function() {
-            const isActive = answer.classList.contains('active');
-            
-            // Закрываем все открытые ответы
-            document.querySelectorAll('.qa-answer.active').forEach(activeAnswer => {
-                if (activeAnswer !== answer) {
-                    activeAnswer.classList.remove('active');
-                    activeAnswer.parentElement.querySelector('.qa-toggle').textContent = '+';
-                }
-            });
-            
-            // Переключаем текущий ответ
-            if (isActive) {
-                answer.classList.remove('active');
-                toggle.textContent = '+';
-            } else {
-                answer.classList.add('active');
-                toggle.textContent = '−';
-            }
-        });
-    });
-});
+// Функция для помощника (если нужна)
+function handleQuestion(e) {
+    // Заглушка для будущего функционала
+    console.log("Вопрос:", e.target.value);
+}
