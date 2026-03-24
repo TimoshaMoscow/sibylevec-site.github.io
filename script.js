@@ -121,7 +121,7 @@ function initAlphabetPronunciation() {
 // Функции для упражнений
 function checkExercise1() {
     let answer = document.getElementById("ex1-answer").value.toLowerCase().trim();
-    let correct = "я видеть красивий машина";
+    let correct = "я вiдеть красивий машiна";
     
     const result = document.getElementById("ex1-result");
     if (answer === correct) {
@@ -131,14 +131,14 @@ function checkExercise1() {
         result.innerHTML = "⚠️ Введите ответ";
         result.style.color = "var(--warning)";
     } else {
-        result.innerHTML = "❌ Попробуйте ещё: 'Я видеть красивий машина'";
+        result.innerHTML = "❌ Попробуйте ещё: 'Я вiдеть красивий машiна'";
         result.style.color = "var(--error)";
     }
 }
 
 function checkExercise2() {
     let answer = document.getElementById("ex2-answer").value.toLowerCase().trim();
-    let correct = "интересний книга все";
+    let correct = "интересний кнiга все";
     
     const result = document.getElementById("ex2-result");
     if (answer === correct) {
@@ -148,7 +148,7 @@ function checkExercise2() {
         result.innerHTML = "⚠️ Введите ответ";
         result.style.color = "var(--warning)";
     } else {
-        result.innerHTML = "❌ Нужно добавить 'все': 'интересний книга все'";
+        result.innerHTML = "❌ Нужно добавить 'все': 'интересний кнiга все'";
         result.style.color = "var(--error)";
     }
 }
@@ -171,7 +171,7 @@ function checkExercise3() {
 
 function checkExercise4() {
     let answer = document.getElementById("ex4-answer").value.toLowerCase().trim();
-    let correct = "ми буду читать интересний книга все";
+    let correct = "ми буду чiтать iнтересний кнiга все";
     
     const result = document.getElementById("ex4-result");
     if (answer === correct) {
@@ -181,7 +181,7 @@ function checkExercise4() {
         result.innerHTML = "⚠️ Введите ответ";
         result.style.color = "var(--warning)";
     } else {
-        result.innerHTML = "❌ Ответ: Ми буду читать интересний книга все";
+        result.innerHTML = "❌ Ответ: Ми буду чiтать iнтересний кнiга все";
         result.style.color = "var(--error)";
     }
 }
