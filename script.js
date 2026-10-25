@@ -1,193 +1,295 @@
-// Инициализация
-document.addEventListener('DOMContentLoaded', function() {
-    // Гарантированно скроллим наверх
-    window.scrollTo(0, 0);
-    
-    // Инициализация помощника
-    const questionInput = document.getElementById('questionInput');
-    if (questionInput) {
-        questionInput.addEventListener('input', handleQuestion);
-    }
-    
-    // Инициализация Q&A аккордеона
-    const qaItems = document.querySelectorAll('.qa-item');
-    
-    qaItems.forEach(item => {
-        const question = item.querySelector('.qa-question');
-        const answer = item.querySelector('.qa-answer');
-        const toggle = item.querySelector('.qa-toggle');
-        
-        if (question && answer && toggle) {
-            question.addEventListener('click', function() {
-                const isActive = answer.classList.contains('active');
-                
-                // Закрываем все открытые ответы
-                document.querySelectorAll('.qa-answer.active').forEach(activeAnswer => {
-                    if (activeAnswer !== answer) {
-                        activeAnswer.classList.remove('active');
-                        const activeToggle = activeAnswer.parentElement.querySelector('.qa-toggle');
-                        if (activeToggle) activeToggle.textContent = '+';
-                    }
-                });
-                
-                // Переключаем текущий ответ
-                if (isActive) {
-                    answer.classList.remove('active');
-                    toggle.textContent = '+';
-                } else {
-                    answer.classList.add('active');
-                    toggle.textContent = '−';
-                }
-            });
-        }
+document.addEventListener("DOMContentLoaded", () => {
+  const revealTargets = document.querySelectorAll(
+    ".section-topline, .intro-grid, .benefit-card, .lesson-row, .exercise-card, .dictionary-card, .alphabet-layout, .qa-item",
+  );
+  if (
+    "IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -35px 0px" },
+    );
+    revealTargets.forEach((element, index) => {
+      element.classList.add("reveal-on-scroll");
+      const delay = index % 4;
+      if (delay) element.dataset.revealDelay = String(delay);
+      revealObserver.observe(element);
     });
-    
-    // Инициализация произношения букв
-    initAlphabetPronunciation();
+  }
+
+  const alphabet = [
+    "А",
+    "Б",
+    "В",
+    "Г",
+    "Д",
+    "Е",
+    "Ё",
+    "Ж",
+    "З",
+    "I",
+    "И",
+    "Й",
+    "К",
+    "Л",
+    "М",
+    "Н",
+    "О",
+    "П",
+    "Р",
+    "С",
+    "Т",
+    "У",
+    "Ф",
+    "Х",
+    "Ц",
+    "Ч",
+    "Ш",
+    "Ъ",
+    "Ь",
+    "Э",
+    "Я",
+  ];
+  const alphabetRoot = document.querySelector(".alphabet-container");
+  const toast = document.querySelector(".pronunciation-toast");
+  if (alphabetRoot) {
+    alphabetRoot.innerHTML = alphabet
+      .map(
+        (letter) =>
+          `<button type="button" class="letter${letter === "I" || letter === "И" ? " special" : ""}" aria-label="Буква ${letter}" data-letter="${letter}">${letter}</button>`,
+      )
+      .join("");
+    alphabetRoot.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-letter]");
+      if (!button || !toast) return;
+      const letter = button.dataset.letter;
+      const names = {
+        I: "I — звук [и]",
+        И: "И — звук [ы]",
+        Й: "Й — звук [й]",
+        Ъ: "Ъ — твёрдый знак",
+        Ь: "Ь — мягкий знак",
+        Ё: "Ё — звук [йо]",
+        Е: "Е — звук [е]",
+        Х: "Х — звук [х]",
+        Ц: "Ц — звук [ц]",
+        Ч: "Ч — звук [ч]",
+        Ш: "Ш — звук [ш]",
+        Ж: "Ж — звук [ж]",
+      };
+      const announcement = names[letter] || `${letter} — название буквы`;
+      toast.textContent = announcement;
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(
+          letter === "I" ? "и" : letter === "И" ? "ы" : letter,
+        );
+        utterance.lang = "ru-RU";
+        window.speechSynthesis.speak(utterance);
+      }
+    });
+  }
+
+  const words = [
+    { ru: "Привет", sv: "Здрава", type: "phrase" },
+    { ru: "До свидания", sv: "До видения", type: "phrase" },
+    { ru: "Можно", sv: "Можна", type: "word" },
+    { ru: "Спасибо", sv: "Спасиба", type: "word" },
+    { ru: "Извините", sv: "Извини", type: "word" },
+    { ru: "Человек", sv: "Человек", type: "word" },
+    { ru: "Дом", sv: "Дом", type: "word" },
+    { ru: "Книга", sv: "Книга", type: "word" },
+    { ru: "Машина", sv: "Машина", type: "word" },
+    { ru: "Собака", sv: "Собака", type: "word" },
+    { ru: "Кот", sv: "Кот", type: "word" },
+    { ru: "Вода", sv: "Вода", type: "word" },
+    { ru: "Хлеб", sv: "Хлеб", type: "word" },
+    { ru: "Солнце", sv: "Сонце", type: "word" },
+    { ru: "Хороший / хорошая / хорошее", sv: "Хороший", type: "word" },
+    { ru: "Большой / большая / большое", sv: "Большой", type: "word" },
+    { ru: "Маленький / маленькая / маленькое", sv: "Маленкий", type: "word" },
+    { ru: "Я иду", sv: "Я идти", type: "phrase" },
+    { ru: "Я читаю", sv: "Я читать", type: "phrase" },
+    { ru: "Я пишу", sv: "Я писать", type: "phrase" },
+    { ru: "Мир", sv: "МIр", type: "word" },
+    { ru: "Мышь", sv: "мИшь", type: "word" },
+    { ru: "Я не понимаю", sv: "Я не понимать", type: "phrase" },
+    { ru: "Повторите, пожалуйста", sv: "Можна повтор?", type: "phrase" },
+    {
+      ru: "Я вижу красивую машину",
+      sv: "Я видеть красивая машина",
+      type: "phrase",
+    },
+    { ru: "Интересные книги", sv: "Интересный книга все", type: "phrase" },
+    { ru: "Все книги на столе", sv: "Книга все на стол", type: "phrase" },
+    { ru: "Я", sv: "Я", type: "word" },
+    { ru: "Ты", sv: "Ти", type: "word" },
+    { ru: "Мы", sv: "Ми", type: "word" },
+    { ru: "Да", sv: "Да", type: "word" },
+    { ru: "Нет", sv: "Нет", type: "word" },
+    { ru: "Сегодня", sv: "Сегодня", type: "word" },
+    { ru: "Вчера", sv: "Вчера", type: "word" },
+    { ru: "Завтра", sv: "Завтра", type: "word" },
+    { ru: "Говорить", sv: "Говорить", type: "word" },
+    { ru: "Учиться", sv: "Учиться", type: "word" },
+    { ru: "Понимать", sv: "Понимать", type: "word" },
+    { ru: "Хотеть", sv: "Хотеть", type: "word" },
+    { ru: "Знать", sv: "Знать", type: "word" },
+    { ru: "Работать", sv: "Работать", type: "word" },
+    { ru: "Жить", sv: "Жить", type: "word" },
+    { ru: "Помогать", sv: "Помогать", type: "word" },
+    { ru: "Друг", sv: "Друг", type: "word" },
+    { ru: "Город", sv: "Город", type: "word" },
+    { ru: "Еда", sv: "Еда", type: "word" },
+    { ru: "Язык", sv: "Язык", type: "word" },
+    { ru: "Слово", sv: "Слово", type: "word" },
+    { ru: "Музыка", sv: "Музыка", type: "word" },
+    { ru: "Новый / новая / новое", sv: "Новый", type: "word" },
+    {
+      ru: "Интересный / интересная / интересное",
+      sv: "Интересный",
+      type: "word",
+    },
+    { ru: "Простой / простая / простое", sv: "Простой", type: "word" },
+    { ru: "Медленно", sv: "Медленно", type: "word" },
+    { ru: "Вместе", sv: "Вместе", type: "word" },
+    { ru: "Хорошо", sv: "Хорошо", type: "word" },
+    {
+      ru: "Ты учишься на Сибилевце?",
+      sv: "Ти учиться Сибилевец?",
+      type: "phrase",
+    },
+    { ru: "Мы говорим вместе", sv: "Ми говорить вместе", type: "phrase" },
+    {
+      ru: "Я учусь и говорю медленно",
+      sv: "Я учиться и говорить медленно",
+      type: "phrase",
+    },
+  ];
+  const dictionaryList = document.getElementById("dictionary-list");
+  const search = document.getElementById("dictionary-search");
+  const count = document.getElementById("word-count");
+  const empty = document.getElementById("dictionary-empty");
+  let activeFilter = "all";
+  const renderDictionary = () => {
+    if (!dictionaryList) return;
+    const query = (search?.value || "").toLocaleLowerCase("ru").trim();
+    const filtered = words.filter(
+      (item) =>
+        (activeFilter === "all" || item.type === activeFilter) &&
+        (!query ||
+          `${item.ru} ${item.sv}`.toLocaleLowerCase("ru").includes(query)),
+    );
+    dictionaryList.innerHTML = filtered
+      .map(
+        (item, index) =>
+          `<article class="dictionary-card"><div><span class="dictionary-original">${item.ru}</span><div class="dictionary-translation">${item.sv}</div><span class="dictionary-type">${item.type === "phrase" ? "Фраза" : "Слово"}</span></div><button class="copy-button" type="button" data-copy="${index}" aria-label="Скопировать ${item.sv}" title="Скопировать">⧉</button></article>`,
+      )
+      .join("");
+    count.textContent = String(filtered.length);
+    empty.hidden = filtered.length > 0;
+    dictionaryList.querySelectorAll("[data-copy]").forEach((button) =>
+      button.addEventListener("click", async () => {
+        const value = filtered[Number(button.dataset.copy)].sv;
+        try {
+          await navigator.clipboard.writeText(value);
+          button.textContent = "✓";
+        } catch {
+          button.textContent = value;
+        }
+        window.setTimeout(() => {
+          button.textContent = "⧉";
+        }, 1400);
+      }),
+    );
+  };
+  search?.addEventListener("input", renderDictionary);
+  document.querySelectorAll(".filter-button").forEach((button) =>
+    button.addEventListener("click", () => {
+      activeFilter = button.dataset.filter;
+      document
+        .querySelectorAll(".filter-button")
+        .forEach((item) => item.classList.toggle("active", item === button));
+      renderDictionary();
+    }),
+  );
+  document.addEventListener("keydown", (event) => {
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+      event.preventDefault();
+      search?.focus();
+      document
+        .getElementById("dictionary")
+        ?.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+  renderDictionary();
 });
 
-// Функция для произношения букв
-function initAlphabetPronunciation() {
-    // Словарь произношений для букв Сибилевца (31 буква)
-    const pronunciations = {
-        'А': '[А]',
-        'Б': '[Бэ]',
-        'В': '[Вэ]',
-        'Г': '[Гэ]',
-        'Д': '[Дэ]',
-        'Е': '[Е]',
-        'Ё': '[Йо]',
-        'Ж': '[Жэ]',
-        'З': '[Зэ]',
-        'I': '[И]',
-        'И': '[Ы]',
-        'Й': '[]',
-        'К': '[Кэ]',
-        'Л': '[Эл]',
-        'М': '[Эм]',
-        'Н': '[Эн]',
-        'О': '[О]',
-        'П': '[Пэ]',
-        'Р': '[Рэ]',
-        'С': '[Сэ]',
-        'Т': '[Тэ]',
-        'У': '[У]',
-        'Ф': '[Фэ]',
-        'Х': '[Ха',
-        'Ц': '[Цэ]',
-        'Ч': '[Че]',
-        'Ш': '[Ша]',
-        'Ъ': '[]',
-        'Ь': '[]',
-        'Э': '[Э]',
-        'Я': '[Я]'
-    };
-    
-    // Находим все буквы в алфавите
-    const letters = document.querySelectorAll('.letter');
-    
-    if (letters.length === 0) return;
-    
-    // Создаём элемент для всплывающей подсказки
-    let toast = document.querySelector('.pronunciation-toast');
-    if (!toast) {
-        toast = document.createElement('div');
-        toast.className = 'pronunciation-toast';
-        document.body.appendChild(toast);
+const normalizeAnswer = (value) =>
+  value
+    .toLocaleLowerCase("ru")
+    .replace(/[.,!?"«»]/g, "")
+    .replace(/ё/g, "е")
+    .replace(/\s+/g, " ")
+    .trim();
+function checkAnswer(inputId, resultId, expected, explanation, step = 0) {
+  const field = document.getElementById(inputId);
+  const result = document.getElementById(resultId);
+  const answer = normalizeAnswer(field?.value || "");
+  const accepted = expected.map(normalizeAnswer);
+  if (!answer) {
+    result.textContent = "Введите ваш вариант — можно попробовать ещё раз.";
+    result.dataset.state = "error";
+    return;
+  }
+  if (accepted.includes(answer)) {
+    result.textContent = `Верно! ${explanation}`;
+    result.dataset.state = "success";
+    if (step) {
+      const next = document.querySelector(`[data-step="${step + 1}"]`);
+      if (next && next.hidden) {
+        next.hidden = false;
+        next.classList.add("is-visible");
+        next.scrollIntoView({ behavior: "smooth", block: "center" });
+        next.querySelector("input")?.focus({ preventScroll: true });
+      }
     }
-    
-    let timeoutId;
-    
-    // Добавляем обработчик клика на каждую букву
-    letters.forEach(letter => {
-        letter.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const char = this.textContent.trim();
-            const message = pronunciations[char] || `Буква ${char}`;
-            
-            // Показываем подсказку
-            toast.textContent = message;
-            toast.style.opacity = '1';
-            
-            // Скрываем через 2 секунды
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-                toast.style.opacity = '0';
-            }, 2000);
-        });
-    });
+  } else {
+    result.textContent = `Пока не совпало. Например: «${expected[0]}». ${explanation}`;
+    result.dataset.state = "error";
+  }
 }
-
-// Функции для упражнений
 function checkExercise1() {
-    let answer = document.getElementById("ex1-answer").value.toLowerCase().trim();
-    let correct = "я вiдеть красивий машiна";
-    
-    const result = document.getElementById("ex1-result");
-    if (answer === correct) {
-        result.innerHTML = "✅ Верно! Слова остаются в одной форме.";
-        result.style.color = "var(--success)";
-    } else if (answer === "") {
-        result.innerHTML = "⚠️ Введите ответ";
-        result.style.color = "var(--warning)";
-    } else {
-        result.innerHTML = "❌ Попробуйте ещё: 'Я вiдеть красивий машiна'";
-        result.style.color = "var(--error)";
-    }
+  checkAnswer(
+    "ex1-answer",
+    "ex1-result",
+    ["ти читать интересный книга"],
+    "Слова сохраняют одну форму.",
+    1,
+  );
 }
-
 function checkExercise2() {
-    let answer = document.getElementById("ex2-answer").value.toLowerCase().trim();
-    let correct = "интересний кнiга все";
-    
-    const result = document.getElementById("ex2-result");
-    if (answer === correct) {
-        result.innerHTML = "✅ Отлично! Частица 'все' после слова.";
-        result.style.color = "var(--success)";
-    } else if (answer === "") {
-        result.innerHTML = "⚠️ Введите ответ";
-        result.style.color = "var(--warning)";
-    } else {
-        result.innerHTML = "❌ Нужно добавить 'все': 'интересний кнiга все'";
-        result.style.color = "var(--error)";
-    }
+  checkAnswer(
+    "ex2-answer",
+    "ex2-result",
+    ["интересный книга все", "книга интересный все"],
+    "Маркер «все» показывает множество.",
+    2,
+  );
 }
-
 function checkExercise3() {
-    let answer = document.getElementById("ex3-answer").value;
-    
-    const result = document.getElementById("ex3-result");
-    if (answer === "било гулять") {
-        result.innerHTML = "✅ Правильно! 'Било' для прошедшего времени.";
-        result.style.color = "var(--success)";
-    } else if (answer === "") {
-        result.innerHTML = "⚠️ Выберите вариант";
-        result.style.color = "var(--warning)";
-    } else {
-        result.innerHTML = "❌ Вчера = прошедшее время → 'било гулять'";
-        result.style.color = "var(--error)";
-    }
-}
-
-function checkExercise4() {
-    let answer = document.getElementById("ex4-answer").value.toLowerCase().trim();
-    let correct = "ми буду чiтать iнтересний кнiга все";
-    
-    const result = document.getElementById("ex4-result");
-    if (answer === correct) {
-        result.innerHTML = "✅ Правильно! Вы освоили все правила Сибилевца!";
-        result.style.color = "var(--success)";
-    } else if (answer === "") {
-        result.innerHTML = "⚠️ Введите ответ";
-        result.style.color = "var(--warning)";
-    } else {
-        result.innerHTML = "❌ Ответ: Ми буду чiтать iнтересний кнiга все";
-        result.style.color = "var(--error)";
-    }
-}
-
-// Функция для помощника (если нужна)
-function handleQuestion(e) {
-    // Заглушка для будущего функционала
-    console.log("Вопрос:", e.target.value);
+  checkAnswer(
+    "ex3-answer",
+    "ex3-result",
+    ["я гулять завтра", "завтра я гулять"],
+    "Время задаёт слово «завтра», глагол не меняется.",
+    3,
+  );
 }

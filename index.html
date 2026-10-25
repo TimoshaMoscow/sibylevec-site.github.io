@@ -1,270 +1,527 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Сибилевец - современный язык на основе русского">
-    <meta property="og:description" content="Инновационный лингвистический проект - простой язык без сложной грамматики. Изучите Сибилевец за 5 минут">
-    <meta name="keywords" content="сибилевец, язык, лингвистика, русский язык, грамматика, искусственный язык">
-    <meta name="description" content="Сибилевец - современный язык с простой грамматикой. Проект Тимофея Сибилева">
-    <meta name="author" content="Тимофей Сибилев">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="ru">
-    <meta property="og:image" content="https://timoshamoscow.github.io/sibylevec-site.github.io/СибилевецНетНазв.png">
-    <meta property="og:url" content="https://timoshamoscow.github.io/sibylevec-site.github.io/">
-    <meta name="theme-color" content="#23415b">
-    <title>Сибилевец | Лингвистика</title>
-    <link rel="icon" href="СибилевецНетНазв.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://timoshamoscow.github.io/sibylevec-site.github.io/">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Сибилевец — простой язык на основе русского: 31 буква, неизменяемые слова, без времён и падежей. Освойте основы за 5 минут."
+    />
+    <meta property="og:title" content="Сибилевец — язык проще русского" />
+    <meta
+      property="og:description"
+      content="Основа языка за 5 минут: меньше букв, простая грамматика и практика."
+    />
+    <meta
+      property="og:image"
+      content="https://timoshamoscow.github.io/sibylevec-site.github.io/СибилевецНетНазв.png"
+    />
+    <meta name="theme-color" content="#f5f4ef" />
+    <title>Сибилевец — язык проще русского</title>
+    <link rel="icon" href="СибилевецНетНазв.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="main-header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="nav-brand">
-                    <img src="СибилевецНетНазв.png" alt="Сибилевец" class="logo">
-                    <a href="https://timoshamoscow.github.io/sibylevec-site.github.io/" class="brand-name">Сибилевец</a>
-                </div>
-                <div class="nav-links">
-                    <a href="#about" class="nav-link">О проекте</a>
-                    <a href="study.html" class="nav-link">Обучение</a>
-                    <a href="dictionary.html" class="nav-link">Словарь</a>
-                    <a href="#community" class="nav-link">Сообщество</a>
-                    <a href="#qa" class="nav-link">Q&A</a>
-                </div>
-            </nav>
-        </div>
+      <div class="container navbar">
+        <a class="nav-brand" href="#top"
+          ><img src="СибилевецНетНазв.png" class="logo" alt="" /><span
+            class="brand-name"
+            >Сибилевец</span
+          ></a
+        >
+        <nav class="nav-links" aria-label="Основная навигация">
+          <a class="nav-link" href="#about">О языке</a
+          ><a class="nav-link" href="#why">Зачем учить</a
+          ><a class="nav-link" href="#learn">Правила</a
+          ><a class="nav-link" href="#practice">Практика</a
+          ><a class="nav-link" href="#dictionary">Словарь</a
+          ><a class="nav-link" href="#alphabet">Алфавит</a>
+        </nav>
+        <a href="#learn" class="button button-small"
+          >Начать учиться <span>↗</span></a
+        >
+      </div>
     </header>
-
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Язык будущего</h1>
-                <p class="hero-subtitle">Простой, логичный, современный. Создан Тимофеем Сибилевым для лёгкого общения</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">правила грамматики</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">31</div>
-                        <div class="stat-label">букв в алфавите</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">минут на изучение</div>
-                    </div>
-                </div>
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span> ЯЗЫКОВОЙ ПРОЕКТ ТИМОФЕЯ СИБИЛЕВА
             </div>
+            <h1>Больше смысла.<br /><span>Меньше правил.</span></h1>
+            <p class="hero-subtitle">
+              Сибилевец — упрощённый язык на основе русского. Освойте главные
+              принципы за пять минут и сразу переходите к практике.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#learn">Изучить основы <span>↓</span></a
+              ><a class="text-link" href="#dictionary"
+                >Открыть словарь <span>↗</span></a
+              >
+            </div>
+            <div class="hero-proof">
+              <div class="proof-avatars">
+                <span>С</span><span>А</span><span>Я</span>
+              </div>
+              <span
+                >Понятная грамматика<br /><b>для повседневного общения</b></span
+              >
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="hero-orbit orbit-one"></div>
+            <div class="hero-orbit orbit-two"></div>
+            <img
+              src="СибилевецНетНазв.png"
+              alt="Иллюстрация проекта Сибилевец"
+              class="hero-image"
+            />
+            <div class="floating-note note-top">
+              <span class="note-icon">✳</span
+              ><span>Понятно<br /><b>с первого раза</b></span>
+            </div>
+            <div class="floating-note note-bottom">
+              <span class="note-big">31</span><span>буква<br />в алфавите</span>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <main class="container">
-        <section id="about" class="section">
-            <div class="section-header">
-                <h2>О проекте</h2>
-                <p class="section-subtitle">Инновационный подход к языку</p>
+        <div class="container hero-metrics">
+          <div>
+            <strong>5 <small>мин</small></strong
+            ><span>на основы</span>
+          </div>
+          <div><strong>31</strong><span>буква вместо 33</span></div>
+          <div><strong>0</strong><span>времён и падежей</span></div>
+          <div class="metric-note">
+            Простой старт<br />для живой речи <span>↗</span>
+          </div>
+        </div>
+      </section>
+      <section class="section intro-section" id="about">
+        <div class="container intro-grid">
+          <div>
+            <div class="eyebrow">01 / ЗНАКОМСТВО</div>
+            <h2>
+              Русская основа.<br /><span class="muted-heading"
+                >Более простой строй.</span
+              >
+            </h2>
+          </div>
+          <div class="intro-text">
+            <p>
+              Сибилевец сохраняет знакомые русские слова и делает грамматику
+              легче: форма слова не меняется в зависимости от рода, числа,
+              падежа или лица. Смысл задают порядок слов, предлоги и контекст.
+            </p>
+            <a href="#learn" class="text-link"
+              >Разобраться в правилах <span>↗</span></a
+            >
+          </div>
+        </div>
+        <div class="container benefits-grid">
+          <article class="benefit-card">
+            <span class="benefit-index">01</span
+            ><span class="benefit-symbol">↗</span>
+            <h3>Без склонений</h3>
+            <p>
+              Существительное и прилагательное сохраняют одну форму в
+              предложении.
+            </p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-index">02</span
+            ><span class="benefit-symbol">◷</span>
+            <h3>Без времён</h3>
+            <p>
+              Глагол не меняется. Когда происходит действие, подскажет слово
+              времени или контекст.
+            </p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-index">03</span
+            ><span class="benefit-symbol">Aa</span>
+            <h3>Меньше букв</h3>
+            <p>В алфавите 31 знак: на два меньше, чем в русском алфавите.</p>
+          </article>
+        </div>
+      </section>
+      <section class="section why-section" id="why">
+        <div class="container">
+          <div class="section-topline">
+            <div>
+              <div class="eyebrow">ЗАЧЕМ ЕГО УЧИТЬ</div>
+              <h2>Чтобы начать говорить, а не зубрить окончания</h2>
+              <p class="section-subtitle">
+                Сибилевец — небольшой языковой проект для тех, кому интересно
+                общение через простые правила.
+              </p>
             </div>
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="card-icon">🎯</div>
-                    <h3>Миссия</h3>
-                    <p>Создать максимально простой и логичный язык для повседневного общения, доступный каждому</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">💡</div>
-                    <h3>Философия</h3>
-                    <p>"Пишем как слышим, думаем как говорим" - основа понятной и интуитивной коммуникации</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">🚀</div>
-                    <h3>Достижения</h3>
-                    <p>Первый в поиске Google, 100/100 скорость загрузки, профессиональная реализация</p>
-                </div>
+          </div>
+          <div class="why-grid">
+            <article class="why-card">
+              <span>01 / БЫСТРЫЙ СТАРТ</span>
+              <h3>Собрать первые фразы за вечер</h3>
+              <p>
+                Освойте несколько опорных слов и сразу стройте предложения без
+                таблиц склонений и спряжений.
+              </p>
+            </article>
+            <article class="why-card">
+              <span>02 / ЯЗЫКОВОЙ ЭКСПЕРИМЕНТ</span>
+              <h3>Посмотреть на русский по-новому</h3>
+              <p>
+                Проверьте, как меняется речь, когда окончание перестаёт нести
+                грамматическую нагрузку, а смысл держат порядок слов и предлоги.
+              </p>
+            </article>
+            <article class="why-card">
+              <span>03 / ОБЩЕНИЕ И ТВОРЧЕСТВО</span>
+              <h3>Играть с языком вместе</h3>
+              <p>
+                Практикуйтесь в коротких диалогах, пополняйте общий словарь и
+                предлагайте свои варианты сообществу.
+              </p>
+            </article>
+          </div>
+          <div class="dialogue-card">
+            <div>
+              <div class="eyebrow">МИНИ-ДИАЛОГ</div>
+              <h3>Первое знакомство</h3>
             </div>
-        </section>
-
-        <section id="features" class="section">
-            <div class="section-header">
-                <h2>Особенности языка</h2>
-                <p class="section-subtitle">Что делает Сибилевец уникальным</p>
+            <div class="dialogue-lines">
+              <p><span>А</span>Здрава! Ти учиться Сибилевец?</p>
+              <p><span>Б</span>Да. Я учиться и говорить медленно.</p>
+              <p><span>А</span>Хорошо! Ми говорить вместе.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Упрощённый алфавит</h3>
-                    <p>31 буква, каждая обозначает один звук. Чёткое произношение без исключений.</p>
-                    <ul class="feature-list">
-                        <li>Звук [и] пишется как I</li>
-                        <li>Звук [ɨ] пишется как И</li>
-                        <li>Логичные замены сложных звуков</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>Отсутствие падежей</h3>
-                    <p>Слова не меняются по падежам, родам и числам. Одна форма - навсегда</p>
-                    <ul class="feature-list">
-                        <li>Никаких склонений</li>
-                        <li>Постоянная форма слов</li>
-                        <li>Простота использования</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>Логичная грамматика</h3>
-                    <p>Всего 3 основных правила, которые можно выучить за 5 минут</p>
-                    <ul class="feature-list">
-                        <li>Множественное число: "все"</li>
-                        <li>Времена: "било"/"буду"</li>
-                        <li>Предлоги вместо падежей</li>
-                    </ul>
-                </div>
+          </div>
+          <p class="why-note">
+            Сибилевец — учебный и творческий проект. Его практическая ценность
+            растёт вместе со словарём, материалами и сообществом; он не обещает
+            заменить русский или другие языки.
+          </p>
+        </div>
+      </section>
+      <section class="section learn-section" id="learn">
+        <div class="container">
+          <div class="section-topline">
+            <div>
+              <div class="eyebrow">02 / ОСНОВЫ ЗА 5 МИНУТ</div>
+              <h2>Всего три принципа</h2>
+              <p class="section-subtitle">
+                Прочитайте, посмотрите на примеры — и попробуйте сами.
+              </p>
             </div>
-        </section>
-
-        <section id="community" class="section">
-            <div class="section-header">
-                <h2>Присоединяйтесь к сообществу</h2>
-                <p class="section-subtitle">Станьте частью языковой революции</p>
+            <div class="lesson-badge">
+              <span>✳</span> КОРОТКИЙ УРОК <b>05:00</b>
             </div>
-            <div class="community-grid">
-                <div class="community-card">
-                    <div class="community-icon">📚</div>
-                    <h3>Изучайте</h3>
-                    <p>Освойте язык за 5 минут с нашими материалами</p>
-                </div>
-                <div class="community-card">
-                    <div class="community-icon">💬</div>
-                    <h3>Общайтесь</h3>
-                    <p>Присоединяйтесь к Telegram-сообществу</p>
-                    <a href="https://t.me/Sibylevec" target="_blank" class="community-link">Перейти</a>
-                </div>
-                <div class="community-card">
-                    <div class="community-icon">🎥</div>
-                    <h3>Смотрите</h3>
-                    <p>Обучающие видео на YouTube</p>
-                    <a href="https://www.youtube.com/@Sybilevec" target="_blank" class="community-link">Перейти</a>
-                </div>
+          </div>
+          <div class="lesson-list">
+            <article class="lesson-row">
+              <div class="lesson-number">01</div>
+              <div class="lesson-copy">
+                <h3>Слова сохраняют форму</h3>
+                <p>
+                  Не добавляем окончания для падежа, рода или лица. Глагол
+                  остаётся в словарной форме.
+                </p>
+              </div>
+              <div class="lesson-example">
+                <span class="example-label">Вместо изменения окончаний</span
+                ><span>Я читать книга</span><small>Я читаю книгу</small>
+              </div>
+            </article>
+            <article class="lesson-row">
+              <div class="lesson-number">02</div>
+              <div class="lesson-copy">
+                <h3>Времена не нужны</h3>
+                <p>
+                  Форма глагола одна. Добавьте «вчера», «сейчас» или «завтра»,
+                  если важно уточнить время.
+                </p>
+              </div>
+              <div class="lesson-example">
+                <span class="example-label">Одно действие — любое время</span
+                ><span>Я читать вчера</span><small>Я читал вчера</small>
+              </div>
+            </article>
+            <article class="lesson-row">
+              <div class="lesson-number">03</div>
+              <div class="lesson-copy">
+                <h3>Смысл создают простые слова</h3>
+                <p>
+                  Порядок слов и предлоги показывают, кто что делает и кому.
+                  «Все» после слова обозначает множество.
+                </p>
+              </div>
+              <div class="lesson-example">
+                <span class="example-label">Маркер множества</span
+                ><span>Книга все на стол</span><small>Все книги на столе</small>
+              </div>
+            </article>
+          </div>
+          <div class="lesson-footnote">
+            <span>i</span>
+            <p>
+              <b>Написание:</b> в примерах ниже используется кириллица. В
+              алфавите Сибилевца знак I обозначает звук [и], а И — звук [ы].
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section practice-section" id="practice">
+        <div class="container">
+          <div class="section-topline">
+            <div>
+              <div class="eyebrow">03 / ЗАКРЕПЛЕНИЕ</div>
+              <h2>Попробуйте сами</h2>
+              <p class="section-subtitle">
+                Пишите свободно: регистр букв и лишние пробелы не важны.
+                Следующее задание откроется после правильного ответа.
+              </p>
             </div>
-        </section>
-
-        <section id="qa" class="section">
-            <div class="section-header">
-                <h2>❓ Вопросы и ответы</h2>
-                <p class="section-subtitle">Всё, что вы хотели знать о Сибилевце</p>
+            <div class="score-pill"><span>✳</span> 3 задания · по порядку</div>
+          </div>
+          <div class="practice-grid">
+            <article class="exercise-card" data-step="1">
+              <div class="exercise-top">
+                <span>УПРАЖНЕНИЕ 01</span><span>ФОРМА СЛОВ</span>
+              </div>
+              <h3>Скажите проще</h3>
+              <p>«Ты читаешь интересную книгу»</p>
+              <label class="sr-only" for="ex1-answer">Ваш вариант</label
+              ><input
+                class="exercise-input"
+                id="ex1-answer"
+                placeholder="Введите ваш вариант…"
+              /><button class="exercise-btn" onclick="checkExercise1()">
+                Проверить <span>→</span>
+              </button>
+              <div
+                class="exercise-result"
+                id="ex1-result"
+                aria-live="polite"
+              ></div>
+            </article>
+            <article class="exercise-card" data-step="2" hidden>
+              <div class="exercise-top">
+                <span>УПРАЖНЕНИЕ 02</span><span>МНОЖЕСТВО</span>
+              </div>
+              <h3>Добавьте маркер</h3>
+              <p>«Интересные книги»</p>
+              <label class="sr-only" for="ex2-answer">Ваш вариант</label
+              ><input
+                class="exercise-input"
+                id="ex2-answer"
+                placeholder="Введите ваш вариант…"
+              /><button class="exercise-btn" onclick="checkExercise2()">
+                Проверить <span>→</span>
+              </button>
+              <div
+                class="exercise-result"
+                id="ex2-result"
+                aria-live="polite"
+              ></div>
+            </article>
+            <article class="exercise-card" data-step="3" hidden>
+              <div class="exercise-top">
+                <span>УПРАЖНЕНИЕ 03</span><span>ВРЕМЯ</span>
+              </div>
+              <h3>Укажите, когда</h3>
+              <p>«Завтра я буду гулять»</p>
+              <label class="sr-only" for="ex3-answer">Ваш вариант</label
+              ><input
+                class="exercise-input"
+                id="ex3-answer"
+                placeholder="Введите ваш вариант…"
+              /><button class="exercise-btn" onclick="checkExercise3()">
+                Проверить <span>→</span>
+              </button>
+              <div
+                class="exercise-result"
+                id="ex3-result"
+                aria-live="polite"
+              ></div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section dictionary-section-new" id="dictionary">
+        <div class="container">
+          <div class="section-topline">
+            <div>
+              <div class="eyebrow">04 / СЛОВА И ФРАЗЫ</div>
+              <h2>Словарь для старта</h2>
+              <p class="section-subtitle">
+                Ищите слово или фразу на русском и сразу находите вариант на
+                Сибилевце.
+              </p>
             </div>
-            
-            <div class="qa-container">
-                <div class="qa-item">
-                    <div class="qa-question">
-                        <h3>Что такое Сибилевец?</h3>
-                        <span class="qa-toggle">+</span>
-                    </div>
-                    <div class="qa-answer">
-                        <p>Сибилевец — это упрощённый вариант русского языка, созданный для лёгкого общения. Он сохраняет основу русского, но убирает сложные грамматические правила.</p>
-                    </div>
-                </div>
-
-                <div class="qa-item">
-                    <div class="qa-question">
-                        <h3>Чем Сибилевец отличается от русского?</h3>
-                        <span class="qa-toggle">+</span>
-                    </div>
-                    <div class="qa-answer">
-                        <p>Основные отличия:</p>
-                        <ul>
-                            <li>Нет падежей и спряжений</li>
-                            <li>31 буква с чёткими звуками</li>
-                            <li>3 простых правила грамматики</li>
-                            <li>Слова не меняются</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="qa-item">
-                    <div class="qa-question">
-                        <h3>Почему в алфавите есть латинская I?</h3>
-                        <span class="qa-toggle">+</span>
-                    </div>
-                    <div class="qa-answer">
-                        <p>Для чистоты принципа "пишем как слышим":</p>
-                        <ul>
-                            <li><strong>I</strong> (латиница) — звук [и] как в "мир"</li>
-                            <li><strong>И</strong> (кириллица) — звук [ɨ] как в "мышь"</li>
-                        </ul>
-                        <p>Так каждый звук получает свою уникальную букву.</p>
-                    </div>
-                </div>
-
-                <div class="qa-item">
-                    <div class="qa-question">
-                        <h3>Кто может использовать Сибилевец?</h3>
-                        <span class="qa-toggle">+</span>
-                    </div>
-                    <div class="qa-answer">
-                        <p>Все, кто хочет упростить общение:</p>
-                        <ul>
-                            <li>Иностранцы, изучающие русский</li>
-                            <li>Дети и подростки</li>
-                            <li>Все, кто ценит простоту и ясность</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="qa-item">
-                    <div class="qa-question">
-                        <h3>Сколько правил в грамматике?</h3>
-                        <span class="qa-toggle">+</span>
-                    </div>
-                    <div class="qa-answer">
-                        <p>Всего 3 основных правила:</p>
-                        <ol>
-                            <li>Слова не меняются</li>
-                            <li>Множественное число = "все"</li>
-                            <li>Время глагола = "било"/"буду"</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="qa-item">
-                    <div class="qa-question">
-                        <h3>Как предложить новое слово?</h3>
-                        <span class="qa-toggle">+</span>
-                    </div>
-                    <div class="qa-answer">
-                        <p>Присоединяйтесь к нашему Telegram-сообществу и предлагайте слова в обсуждениях! Каждое предложение рассматривается.</p>
-                    </div>
-                </div>
+            <div class="dictionary-count">
+              <b id="word-count">0</b><span>слов и фраз</span>
             </div>
-
-            <div class="qa-footer">
-                <p>Не нашли ответ? <a href="https://t.me/Sibylevec" target="_blank">Спросите в Telegram</a></p>
+          </div>
+          <div class="dictionary-toolbar">
+            <label class="search-box"
+              ><span>⌕</span
+              ><input
+                id="dictionary-search"
+                type="search"
+                placeholder="Например, «спасибо» или «дом»"
+                autocomplete="off"
+              /><kbd>⌘ K</kbd></label
+            >
+            <div
+              class="dictionary-tabs"
+              role="group"
+              aria-label="Фильтр словаря"
+            >
+              <button class="filter-button active" data-filter="all">Все</button
+              ><button class="filter-button" data-filter="phrase">Фразы</button
+              ><button class="filter-button" data-filter="word">Слова</button>
             </div>
-        </section>
+          </div>
+          <div class="dictionary-grid" id="dictionary-list"></div>
+          <div class="empty-state" id="dictionary-empty" hidden>
+            Ничего не нашлось. Попробуйте другой запрос.
+          </div>
+          <p class="dictionary-note">
+            Словарь проекта развивается. Если слово ещё не добавлено, предложите
+            его в
+            <a
+              href="https://t.me/Sibylevec"
+              target="_blank"
+              rel="noopener noreferrer"
+              >сообществе Telegram ↗</a
+            >.
+          </p>
+        </div>
+      </section>
+      <section class="section alphabet-section" id="alphabet">
+        <div class="container alphabet-layout">
+          <div>
+            <div class="eyebrow">05 / ПИСЬМО И ЗВУКИ</div>
+            <h2>Алфавит<br />из 31 знака</h2>
+            <p class="section-subtitle">
+              Нажмите на букву, чтобы услышать её название. Знакомые слова
+              помогают быстро начать читать.
+            </p>
+            <div class="alphabet-key">
+              <span class="key-swatch"></span> Дополнительное различение звуков
+            </div>
+          </div>
+          <div class="alphabet-panel">
+            <div
+              class="alphabet-container"
+              aria-label="Алфавит Сибилевца"
+            ></div>
+            <p class="alphabet-hint">
+              I — звук [и] <span>·</span> И — звук [ы]
+            </p>
+            <div
+              class="pronunciation-toast"
+              role="status"
+              aria-live="polite"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <section class="section faq-section" id="faq">
+        <div class="container faq-layout">
+          <div>
+            <div class="eyebrow">06 / ЧАСТЫЕ ВОПРОСЫ</div>
+            <h2>Осталось<br />уточнить?</h2>
+            <p class="section-subtitle">
+              Коротко отвечаем на главные вопросы о языке.
+            </p>
+            <a
+              href="https://t.me/Sibylevec"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-link"
+              >Спросить сообщество <span>↗</span></a
+            >
+          </div>
+          <div class="qa-container">
+            <details class="qa-item">
+              <summary>Что такое Сибилевец?<span>＋</span></summary>
+              <p>
+                Это проект упрощённого языка на основе русского. Он сохраняет
+                знакомую лексику и использует более простую грамматическую
+                модель.
+              </p>
+            </details>
+            <details class="qa-item">
+              <summary>
+                Правда ли, что основы можно выучить за 5 минут?<span>＋</span>
+              </summary>
+              <p>
+                За пять минут можно понять главные принципы и составить первые
+                простые фразы. Для свободного общения понадобится практика и
+                расширение словаря.
+              </p>
+            </details>
+            <details class="qa-item">
+              <summary>
+                Как сказать, когда произошло действие?<span>＋</span>
+              </summary>
+              <p>
+                Глагол не меняется по временам. Используйте слова «вчера»,
+                «сейчас», «завтра» или контекст, если время важно.
+              </p>
+            </details>
+            <details class="qa-item">
+              <summary>
+                Как образовать множественное число?<span>＋</span>
+              </summary>
+              <p>
+                Поставьте отдельное слово «все» после существительного: «книга
+                все». Само существительное не меняется.
+              </p>
+            </details>
+            <details class="qa-item">
+              <summary>
+                Почему в алфавите есть латинская I?<span>＋</span>
+              </summary>
+              <p>
+                В принятом здесь варианте I обозначает звук [и], а кириллическая
+                И — звук [ы].
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
     </main>
-
     <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="СибилевецНетНазв.png" alt="Сибилевец" class="footer-logo">
-                    <div class="footer-text">
-                        <div class="footer-title">Сибилевец</div>
-                        <div class="footer-subtitle">Язык простых возможностей</div>
-                    </div>
-                </div>
-                <div class="footer-info">
-                    <div class="footer-copyright">© 2026 Сибилевец By TStudios</div>
-                    <div class="footer-links">
-                        <a href="https://t.me/Sibylevec" target="_blank">Telegram</a>
-                        <span class="footer-divider">•</span>
-                        <a href="https://www.youtube.com/@Sybilevec" target="_blank">YouTube</a>
-                    </div>
-                </div>
-            </div>
+      <div class="container footer-content">
+        <a class="nav-brand" href="#top"
+          ><img src="СибилевецНетНазв.png" class="footer-logo" alt="" /><span
+            class="footer-title"
+            >Сибилевец</span
+          ></a
+        ><span class="footer-subtitle">Язык простых возможностей</span>
+        <div class="footer-links">
+          <a
+            href="https://t.me/Sibylevec"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Telegram ↗</a
+          ><a
+            href="https://www.youtube.com/@Sybilevec"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YouTube ↗</a
+          ><span>© 2026</span>
         </div>
+      </div>
     </footer>
-
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
